@@ -9,6 +9,10 @@ We would like to work with the intersection between technology and engineering a
 Use [this link](https://nodejs.org/en/download/) to download Node.js. Our software uses version 12.14.1. 
 To check if you have the latest version, in your Terminal/Command Prompt run `node -v`.
 
+## Clone This Repository
+1. In your Terminal/Command Prompt, `cd` to the directory you want the repository to be in.
+2. Run this command: `git clone https://github.com/allisonchen23/fLOW_frontend.git`
+
 ## Meet the Team
 ### Design Team
 **Nick Hom** | Second Year Economics Major<br/>
