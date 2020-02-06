@@ -10,8 +10,13 @@ Use [this link](https://nodejs.org/en/download/) to download Node.js. Our softwa
 To check if you have the latest version, in your Terminal/Command Prompt run `node -v`.
 
 ## Clone This Repository
-1. In your Terminal/Command Prompt, `cd` to the directory you want the repository to be in.
+1. In your terminal/command prompt, `cd` to the directory you want the repository to be in.
 2. Run this command: `git clone https://github.com/allisonchen23/fLOW_frontend.git`
+
+## Run the Web App
+1. From terminal, `cd` into the downloaded repository
+2. Run `npm install`
+3. Run `npm start`
 
 ## Meet the Team
 ### Design Team
