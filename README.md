@@ -4,6 +4,11 @@ Code for fLOW, a personal water usage tracker. fLOW is a project through Creativ
 ### Motivation
 We would like to work with the intersection between technology and engineering and sustainability. Each and every one of us wastes water while we're washing our hands, brushing our teeth, etc. The goal of this project is to develop a device to measure water usage and display a user's trends over time. By bringing attention and awareness to the problem, individuals can actively make lifestyle changes to play their part in conserving water.
 
+### To Run the Web App
+## Install Node.js
+Use [this link](https://nodejs.org/en/download/) to download Node.js. Our software uses version 12.14.1. 
+To check if you have the latest version, in your Terminal/Command Prompt run `node -v`.
+
 ## Meet the Team
 ### Design Team
 **Nick Hom** | Second Year Economics Major<br/>
