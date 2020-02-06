@@ -1,19 +1,19 @@
 # fLOW
 Code for fLOW, a personal water usage tracker. fLOW is a project through Creative Labs at UCLA led by Allison Chen and Carla Cornillon.
 
-### Motivation
+## Motivation
 We would like to work with the intersection between technology and engineering and sustainability. Each and every one of us wastes water while we're washing our hands, brushing our teeth, etc. The goal of this project is to develop a device to measure water usage and display a user's trends over time. By bringing attention and awareness to the problem, individuals can actively make lifestyle changes to play their part in conserving water.
 
-### To Run the Web App
-## Install Node.js
+## To Run the Web App
+### Install Node.js
 Use [this link](https://nodejs.org/en/download/) to download Node.js. Our software uses version 12.14.1. 
 To check if you have the latest version, in your Terminal/Command Prompt run `node -v`.
 
-## Clone This Repository
+### Clone This Repository
 1. In your terminal/command prompt, `cd` to the directory you want the repository to be in.
 2. Run this command: `git clone https://github.com/allisonchen23/fLOW_frontend.git`
 
-## Run the Web App
+### Run the Web App
 1. From terminal, `cd` into the downloaded repository
 2. Run `npm install`
 3. Run `npm start`
