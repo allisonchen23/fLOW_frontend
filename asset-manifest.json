@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/fLOW/static/css/main.563e0804.chunk.css",
-    "main.js": "/fLOW/static/js/main.7d494d39.chunk.js",
-    "main.js.map": "/fLOW/static/js/main.7d494d39.chunk.js.map",
-    "runtime-main.js": "/fLOW/static/js/runtime-main.3ff75f52.js",
-    "runtime-main.js.map": "/fLOW/static/js/runtime-main.3ff75f52.js.map",
-    "static/js/2.767a1b21.chunk.js": "/fLOW/static/js/2.767a1b21.chunk.js",
-    "static/js/2.767a1b21.chunk.js.map": "/fLOW/static/js/2.767a1b21.chunk.js.map",
-    "index.html": "/fLOW/index.html",
-    "precache-manifest.5b6735a84d0f357e0a9a0702b7424b30.js": "/fLOW/precache-manifest.5b6735a84d0f357e0a9a0702b7424b30.js",
-    "service-worker.js": "/fLOW/service-worker.js",
-    "static/css/main.563e0804.chunk.css.map": "/fLOW/static/css/main.563e0804.chunk.css.map",
-    "static/js/2.767a1b21.chunk.js.LICENSE": "/fLOW/static/js/2.767a1b21.chunk.js.LICENSE",
-    "static/media/flow_logo.svg": "/fLOW/static/media/flow_logo.134cada3.svg"
+    "main.css": "/fLOW_frontend/static/css/main.563e0804.chunk.css",
+    "main.js": "/fLOW_frontend/static/js/main.8813b7bb.chunk.js",
+    "main.js.map": "/fLOW_frontend/static/js/main.8813b7bb.chunk.js.map",
+    "runtime-main.js": "/fLOW_frontend/static/js/runtime-main.1893abb4.js",
+    "runtime-main.js.map": "/fLOW_frontend/static/js/runtime-main.1893abb4.js.map",
+    "static/js/2.b6ecd9b0.chunk.js": "/fLOW_frontend/static/js/2.b6ecd9b0.chunk.js",
+    "static/js/2.b6ecd9b0.chunk.js.map": "/fLOW_frontend/static/js/2.b6ecd9b0.chunk.js.map",
+    "index.html": "/fLOW_frontend/index.html",
+    "precache-manifest.b0a43e7d2018519aebda288a8820373b.js": "/fLOW_frontend/precache-manifest.b0a43e7d2018519aebda288a8820373b.js",
+    "service-worker.js": "/fLOW_frontend/service-worker.js",
+    "static/css/main.563e0804.chunk.css.map": "/fLOW_frontend/static/css/main.563e0804.chunk.css.map",
+    "static/js/2.b6ecd9b0.chunk.js.LICENSE": "/fLOW_frontend/static/js/2.b6ecd9b0.chunk.js.LICENSE",
+    "static/media/flow_logo.svg": "/fLOW_frontend/static/media/flow_logo.134cada3.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3ff75f52.js",
-    "static/js/2.767a1b21.chunk.js",
+    "static/js/runtime-main.1893abb4.js",
+    "static/js/2.b6ecd9b0.chunk.js",
     "static/css/main.563e0804.chunk.css",
-    "static/js/main.7d494d39.chunk.js"
+    "static/js/main.8813b7bb.chunk.js"
   ]
 }
