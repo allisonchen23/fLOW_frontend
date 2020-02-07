@@ -19,16 +19,29 @@ class Home extends Component {
   render() {
     return (
         <React.Fragment>
+          <div className="body">
+            <div className="body_wrap">
+              <div className="body_container">
+                <div className="body_box long" id="message_box">
+                  <div className="box_content">
+                  </div>  
+                </div> 
+                <div className="body_box">
+                  <div className="box_content">
+                  </div>  
+                </div> 
+                <div className="body_box">
+                  <div className="box_content">
 
-          <header className="App-header">
-            <title>
-              Creative Lab: fLOW
-            </title>
-
-              <a className="github-link" href="https://github.com/allisonchen23/fLOW" target="_blank" rel="noopener noreferrer">
-                Our GitHub
-              </a>
-          </header>
+                  </div>  
+                </div> 
+                <div className="body_box full_width double_height">
+                  <div className="box_content">
+                  </div>  
+                </div> 
+              </div>
+            </div>
+          </div>
         </React.Fragment>
     );
   }
