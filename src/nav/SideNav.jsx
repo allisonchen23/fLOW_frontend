@@ -32,20 +32,6 @@ class Side_Nav extends Component {
                     </div>
                   </Link> 
                 </li>
-                <li className="nav_item">
-                  <Link class="nav_square" to="/pages/data.js">
-                    <div className="">
-                      <FontAwesomeIcon icon="signal" className="nav_icon"/>
-                    </div>
-                  </Link>
-                </li>
-                <li className="nav_item"> 
-                  <Link class="nav_square" to="/pages/about.js">
-                    <div className="">
-                      <FontAwesomeIcon icon="clock" className="nav_icon"/>
-                    </div>
-                  </Link>
-                </li>
                 <li className="nav_item"> 
                   <Link class="nav_square" to="/">
                     <div className="">
