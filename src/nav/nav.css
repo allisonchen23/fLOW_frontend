@@ -20,8 +20,8 @@
   pointer-events: none;
 }
 
-.App-header {
-  background-color: #f3f4f7;
+.body {
+  background-color: #F3F4F7;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,12 +29,15 @@
   justify-content: top;
   font-size: calc(20px + 2vmin);
   font-family: 'Open Sans', sans-serif;
-  color: white;
+  color: black;
   box-shadow: 5px 0px 20px #0000007A;
-  width: 95vw;
+  max-width: 95vw;
+  min-width: 95vw;
+  left: 5vw;
   float: right;
+  overflow:none;
   z-index: 1;
-
+  padding: 4vw 0 0 0; 
 }
 
 .github-link {
