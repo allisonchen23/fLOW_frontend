@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import './home.css';
 import logo from '../assets/svg/flow_logo.svg';
 import dbman from '../assets/svg/dashboardimg.svg';
+import drop from '../assets/svg/drop.svg';
 
 // Imports icons
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -45,6 +46,7 @@ class Home extends Component {
                 </div> 
                 <div className="body_box">
                   <div className="box_content">
+                    <img className="dropimg" src={drop}/>                 
                   </div>  
                 </div> 
                 <div className="body_box">
