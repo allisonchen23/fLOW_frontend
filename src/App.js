@@ -3,7 +3,7 @@ import './App.css';
 import logo from './assets/svg/flow_logo.svg';
 // Connect pages
 import Home from "./pages/home.js"
-import Data from "./pages/data.js"
+import Tips from "./pages/tips.js"
 import About from "./pages/about.js"
 import Side_Nav from "./nav/SideNav.jsx"
 import Top_Bar from "./nav/TopBar.jsx"
@@ -36,7 +36,7 @@ class App extends Component {
        
           <Switch>
             <Route path = "/pages/home.js" exact component={Home} />
-            <Route path = "/pages/data.js" exact component={Data} />
+            <Route path = "/pages/tips.js" exact component={Tips} />
             <Route path = "/pages/about.js" exact component={About} />
           </Switch>
           </BrowserRouter>
