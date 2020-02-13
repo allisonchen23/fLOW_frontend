@@ -8,12 +8,13 @@ class About extends Component {
   render() {
     return (
         <React.Fragment>
-
-          <header className="App-header">
-            <title>
-              About Us:
-            </title>
-          </header>
+          <div className="body">
+            <div className="body_wrap">
+              <div className="body_container">
+                
+              </div>
+            </div>
+          </div>
         </React.Fragment>
     );
   }

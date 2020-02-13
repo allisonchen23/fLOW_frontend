@@ -1,0 +1,28 @@
+.body {
+  background-color: #F3F4F7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  font-size: calc(20px + 2vmin);
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  box-shadow: 5px 0px 20px #0000007A;
+  max-width: 95vw;
+  min-width: 95vw;
+  left: 5vw;
+  float: right;
+  overflow:none;
+  z-index: 1;
+  padding: 4vw 0 0 0; 
+}
+
+.body_wrap {
+  width: 100%;
+}
+
+.body_container {
+  margin: 2.5vw;
+
+}

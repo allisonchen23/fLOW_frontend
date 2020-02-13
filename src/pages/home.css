@@ -1,24 +1,3 @@
-
-.App-header {
-  background-color: #F3F4F7;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: top;
-  font-size: calc(20px + 2vmin);
-  font-family: 'Open Sans', sans-serif;
-  color: black;
-  box-shadow: 5px 0px 20px #0000007A;
-  max-width: 95vw;
-  min-width: 95vw;
-  left: 5vw;
-  float: right;
-  overflow:none;
-  z-index: 1;
-  padding: 6vw 0 0 0;  
-}
-  
 .github-link {
   font-size: calc(10px + 2vmin);
   color: #61dafb;
@@ -52,14 +31,21 @@
   margin: 2.5vw;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 12vw);
-  grid-gap: 2.5vw;
+  grid-template-rows: repeat(3, 11vw);
+  grid-gap: 2vw;
 }
    
 .body_box {
   border-radius: 1.4vw;
   background-color: #fff;
   box-shadow: 0px 0px 7px #0000001A;
+}
+
+.box_content {
+  width: 100%;
+  height: 100%;
+  display: table;
+  line-height: 100%;
 }
    
 #message_box {
@@ -77,6 +63,35 @@
    
 .double_height {
   grid-row: span 2;
+}
+
+.box_content h2 {
+  font-family: 'Open-Sans', sans-serif;
+  color: #fff;
+  font-size: 1em;
+  margin: auto;
+  padding-left: 7%;
+  display: table-cell;
+  vertical-align: middle;
+  width: 57%;
+  line-height: 1em;
+  text-align: center;
+}
+
+.dbimg {
+  display: table-cell;
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+  padding-top: 1%;
+}
+
+
+.dropimg {
+  display: inline-block;
+  height: 50%;
+  width: auto;
+  vertical-align: middle;
 }
 
 
