@@ -4,6 +4,7 @@ import React, { Component, Fragment } from 'react';
 import firebase from '../firebase.js';
 
 import './data.css';
+import Dashboard from "../graphdata/Dashboard.js"
 
 class Data extends Component { 
     constructor(props) {
@@ -56,6 +57,7 @@ class Data extends Component {
   render() {
     return (
         <React.Fragment>
+          <Dashboard/>
 
           <header className="data">
             <p>From database: {this.state.temp}</p>
