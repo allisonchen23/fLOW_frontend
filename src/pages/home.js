@@ -44,9 +44,10 @@ class Home extends Component {
       const data = snapshot;
       //each child snapshot is an entry from arduino
       data.forEach(childSnapshot => {
-        volume = volume + childSnapshot.child('volume').val();
-        console.log(volume);
-
+        if (childSnapshot.key > 100 && childSnapshot.key < 150) {
+          volume = volume + childSnapshot.child('volume').val();
+          console.log(volume);
+        }
       })
       this.setState({ volume: volume });
     })
