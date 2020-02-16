@@ -18,17 +18,20 @@ class Data extends Component {
       //lifecylce function of Components
       //called only once 
       increment_temp = () => {
-        var past_temp = this.state.temp;
+        let past_temp = this.state.temp;
         this.setState({ temp: past_temp + 1 });
+        firebase.database().ref('temp').set(4);
+        console.log('Data written');
       }
       componentDidMount = () => {
+        this.increment_temp();
         //var userID = firebase.auth().currentUser.uid;
-        firebase.database.enableLogging(true);
-        let db = firebase.database();
-        var curtemp;
-        let tempRef = db.ref('temp'); //
-        let imageRef = db.ref('image');
-        let nameRef = db.ref('image/name');
+        // firebase.database.enableLogging(true);
+        // let db = firebase.database();
+        // var curtemp;
+        // let tempRef = db.ref('temp'); //
+        // let imageRef = db.ref('image');
+        // let nameRef = db.ref('image/name');
     
     
     // if speed the database was more of a tree like the following:
@@ -38,17 +41,18 @@ class Data extends Component {
         // access humidity from .ref('temp/humidity')
         // then access value of humidity with speed.humidity
         //these are called listneners, run asynchronously
-        tempRef.on('value', (snapshot) => {
-          curtemp = snapshot.val();
-          this.setState({ temp: curtemp });
-        });
-        imageRef.on('value', snapshot => {
-          let db_name= snapshot.child('name').val();
-          this.setState({name: db_name});
-        });
-        nameRef.on('value', snapshot => {
-          this.setState({name2: snapshot.val()});
-        });
+        // tempRef.on('value', (snapshot) => {
+        //   curtemp = snapshot.val();
+        //   this.setState({ temp: curtemp });
+        //   console.log(this.state.temp);
+        // });
+        // imageRef.on('value', snapshot => {
+        //   let db_name= snapshot.child('name').val();
+        //   this.setState({name: db_name});
+        // });
+        // nameRef.on('value', snapshot => {
+        //   this.setState({name2: snapshot.val()});
+        // });
     
     
       }
