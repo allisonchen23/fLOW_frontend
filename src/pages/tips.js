@@ -2,7 +2,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from "react-router-dom";
 
-import './home.css';
+import './tips.css';
 import logo from '../assets/svg/flow_logo.svg';
 import dbman from '../assets/svg/dashboardimg.svg';
 import drop from '../assets/svg/drop.svg';
@@ -10,9 +10,6 @@ import drop from '../assets/svg/drop.svg';
 // Imports icons
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle } from '@fortawesome/free-solid-svg-icons'
-
-import Dashboard from "../graphdata/Dashboard.js"
-
 
 // Adds icons
 library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle);
@@ -22,7 +19,7 @@ library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCirc
 class Welcome extends Component {
 
   getMsg() {
-    var msg = ['Howdy, fLOW!', "Welcome to your dashboard, fLOW!", "Today is a great day to conserve!"];
+    var msg = ['Time to save water!', "Every drop has an impact.", "What can you do to save our planet?"];
     var i = Math.floor(Math.random() * Math.floor(3));
     return msg[i];
   }
@@ -34,32 +31,33 @@ class Welcome extends Component {
 
 console.log(logo);
 
-class Home extends Component { 
+class Tips extends Component { 
   render() {
     return (
         <React.Fragment>
-          
-          <div className="body">
-            <div className="body_wrap">
-              <div className="body_container">
-                <div className="body_box long" id="message_box">
-                  <div className="box_content">
+          <div className="body_t">
+            <div className="body_wrap_t">
+              <div className="body_container_t">
+                <div className="body_box" id="message_box_t">
+                  <div className="box_content_t">
                     <Welcome />
-                    <img className="dbimg" src={dbman}/>
                   </div>  
                 </div> 
-                <div className="body_box">
-                  <div className="box_content">
+                <div className="body_box_t long_t">
+                  <div className="box_content_t">
                     <img className="dropimg" src={drop}/>                 
                   </div>  
                 </div> 
-                <div className="body_box">
-                  <div className="box_content">
+                <div className="body_box_t full_width_t" id="message_box3_t">
+                  <div className="box_content_t">
                   </div>  
                 </div> 
-                <div className="body_box full_width double_height">
-                  <div className="box_content">
-                  <Dashboard/>
+                <div className="body_box long_t" id="message_box5_t">
+                  <div className="box_content_t">
+                  </div>  
+                </div> 
+                <div className="body_box_t">
+                  <div className="box_content_t">
                   </div>  
                 </div> 
               </div>
@@ -70,4 +68,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Tips;
