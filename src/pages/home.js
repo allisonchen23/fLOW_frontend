@@ -11,6 +11,9 @@ import drop from '../assets/svg/drop.svg';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
+import Dashboard from "../graphdata/Dashboard.js"
+
+
 // Adds icons
 library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle);
 
@@ -35,6 +38,7 @@ class Home extends Component {
   render() {
     return (
         <React.Fragment>
+          
           <div className="body">
             <div className="body_wrap">
               <div className="body_container">
@@ -55,6 +59,7 @@ class Home extends Component {
                 </div> 
                 <div className="body_box full_width double_height">
                   <div className="box_content">
+                  <Dashboard/>
                   </div>  
                 </div> 
               </div>

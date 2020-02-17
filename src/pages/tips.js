@@ -48,7 +48,7 @@ class Tips extends Component {
                     <img className="dropimg" src={drop}/>                 
                   </div>  
                 </div> 
-                <div className="body_box_t full_width_t">
+                <div className="body_box_t full_width_t" id="message_box3_t">
                   <div className="box_content_t">
                   </div>  
                 </div> 
