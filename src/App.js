@@ -51,7 +51,7 @@ class App extends Component {
        
           <Switch>
             <Route path = "/pages/home.js" exact component={Home} />
-            <Route path = "/pages/data.js" exact component={Data} />
+            <Route path = "/pages/graph.js" exact component={Data} />
             <Route path = "/pages/about.js" exact component={About} />
           </Switch>
           </BrowserRouter>
