@@ -40,7 +40,7 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      daily_sums: {},
+      daily_sums: {}, //timestamp:sum
       volume: 0
     }
   }
@@ -55,25 +55,52 @@ class Home extends Component {
   }
   updateDays = (day_index, new_vol) => {
   }
+
+
   componentDidMount = () => {
     let db = firebase.database();
     this.getDaysData(db);
     let dataRef = db.ref('graph_dummy');
-    let volume = 0;
+    let daily_sums = this.state.daily_sums;
+
     dataRef.on('value', snapshot => {
-      const data = snapshot;
+      const data = snapshot; //testing
       //each child snapshot is an entry from arduino
+      
+      let timestamp;
+      let vol;
+      let date;
+      let noon_timestamp;
+      let time = [1582180966000, 1582180900000,1582180466000,1582180466000,1582180666000,1582180766000,1582180866000];
       data.forEach(childSnapshot => {
-        if (childSnapshot.key > 100 && childSnapshot.key < 150) {
-          volume = volume + childSnapshot.child('volume').val();
-          console.log(volume);
+        timestamp = 1582180966000; //childSnapshot.key;
+        //console.log(timestamp);
+        vol = childSnapshot.child('volume').val();
+        //console.log(vol);
+        date = new Date();
+        date.setTime(timestamp);
+
+        //Month: starting from 0 (Jan) -> ex. 4 is May
+        noon_timestamp = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 12, 0, 0, 0);
+
+        //console.log(noon_timestamp.getHours());
+
+        if (noon_timestamp in daily_sums) {
+          daily_sums[noon_timestamp] += vol;
+        } else {
+          daily_sums[noon_timestamp] = vol;
         }
+
+        console.log(daily_sums[noon_timestamp]);
+
       })
-      this.setState({ volume: volume });
     })
+
+    //this.setState({daily_sums:daily_sums});
   }
   render() {
-    console.log(this.state.volume);
+    console.log(this.state.daily_sums);
+    //console.log(Object.keys(this.state.daily_sums)[0] + " - value: " + this.state[Object.keys(this.state.daily_sums)[0]]);
     return (
         <React.Fragment>
           
