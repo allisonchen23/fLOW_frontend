@@ -11,7 +11,8 @@ export default class Dashboard extends Component {
         super();
         this.state = {
           data: [],
-          labels: dayLabels,
+          filteredData: [],
+          labels: dayLabels
         };
       }
 
@@ -24,12 +25,30 @@ export default class Dashboard extends Component {
           data.forEach(childSnapshot => {
             volume.push(childSnapshot.child('volume').val());
           })
-          this.setState({ data: volume })
+          this.setState({ data: volume, filteredData: volume })
+        })
+    }
+
+    filteredData = (dataFilter) => {
+        //let filteredData = this.state.data
+        filteredData = filteredData.filter((data. startDate) => {
+          var i = 0;
+          checkDate = startDate
+          while(!endDate) {
+            for (j = 0; j < data.length; j++) {
+                if (checkDate == data.time)
+                    filteredData[i] = data.volume
+              }
+
+          }
+        })
+        this.setState({
+            filteredData
         })
     }
 
     render() {
-        const { data, labels } = this.state;
+        const { filteredData, labels } = this.state;
         return (
             <div className={classes.container}>
             <header>
@@ -37,9 +56,9 @@ export default class Dashboard extends Component {
                 <h1>Water Dashboard</h1>
             </header>
                 <LineGraph
-                    data={data}
+                    data={filteredData}
                     labels={labels} />
             </div>
         )
     }
-}
+    }
