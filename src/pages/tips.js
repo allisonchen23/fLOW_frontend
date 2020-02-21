@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from "react-router-dom";
 
 import './tips.css';
+import './globalstyle.css';
 import logo from '../assets/svg/flow_logo.svg';
 import dbman from '../assets/svg/dashboardimg.svg';
 import drop from '../assets/svg/drop.svg';
@@ -35,8 +36,8 @@ class Tips extends Component {
   render() {
     return (
         <React.Fragment>
-          <div className="body_t">
-            <div className="body_wrap_t">
+          <div className="body">
+            <div className="body_wrap">
               <div className="body_container_t">
                 <div className="body_box" id="message_box_t">
                   <div className="box_content_t">
