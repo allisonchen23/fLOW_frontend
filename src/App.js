@@ -24,7 +24,21 @@ library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCirc
 console.log(logo);
 
 class App extends Component {
-
+  // componentDidMount = () => {
+  //   let db = firebase.database();
+  //   let dataRef = db.ref('graph_dummy');
+  //   let volume = [];
+  //   dataRef.on('value', snapshot =>{
+  //     const data = snapshot;
+  //     data.forEach(childSnapshot => {
+  //       volume.push(childSnapshot.child('volume').val());
+        
+  //     })
+  //   })
+  //   console.log(volume);
+  //   console.log('saved');
+    
+  //}
  
   render() {
     return (

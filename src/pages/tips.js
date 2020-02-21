@@ -19,7 +19,7 @@ library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCirc
 class Welcome extends Component {
 
   getMsg() {
-    var msg = ['Howdy!', "Welcome to your dashboard!", "Today is a great day to conserve!"];
+    var msg = ['Time to save water!', "Every drop has an impact.", "What can you do to save our planet?"];
     var i = Math.floor(Math.random() * Math.floor(3));
     return msg[i];
   }
@@ -35,28 +35,29 @@ class Tips extends Component {
   render() {
     return (
         <React.Fragment>
-          <div className="body">
-            <div className="body_wrap">
-              <div className="body_container">
-                <div className="body_box long" id="message_box">
-                  <div className="box_content">
+          <div className="body_t">
+            <div className="body_wrap_t">
+              <div className="body_container_t">
+                <div className="body_box" id="message_box_t">
+                  <div className="box_content_t">
                     <Welcome />
-                      <img className="dbimg" src={dbman}/>
                   </div>  
                 </div> 
-                <div className="body_box">
-                  <div className="box_content">
-                    <div className="stat_box">
-                      <img className="dropimg" src={drop}/>    
-                    </div>
+                <div className="body_box_t long_t">
+                  <div className="box_content_t">
+                    <img className="dropimg" src={drop}/>                 
                   </div>  
                 </div> 
-                <div className="body_box">
-                  <div className="box_content">
+                <div className="body_box_t full_width_t" id="message_box3_t">
+                  <div className="box_content_t">
                   </div>  
                 </div> 
-                <div className="body_box full_width double_height">
-                  <div className="box_content">
+                <div className="body_box long_t" id="message_box5_t">
+                  <div className="box_content_t">
+                  </div>  
+                </div> 
+                <div className="body_box_t">
+                  <div className="box_content_t">
                   </div>  
                 </div> 
               </div>
