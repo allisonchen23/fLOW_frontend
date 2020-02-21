@@ -73,9 +73,9 @@
   padding-left: 7%;
   display: table-cell;
   vertical-align: middle;
-  width: 57%;
+  width: 52%;
   line-height: 1em;
-  text-align: center;
+  text-align: left;
 }
 
 .dbimg {
@@ -88,12 +88,19 @@
 
 
 .dropimg {
-  display: inline-block;
   height: 50%;
   width: auto;
-  vertical-align: middle;
+  padding-left: 7%;
 }
 
+.stat_box {
+  display: flex;
+  align-items: center;
+}
+
+.static_data_text {
+  font-size: 17pt;
+}
 
   /* Set Appropriate Padding for Text (GitHub only right now) */
   @media only screen and (max-width: 1000px)
