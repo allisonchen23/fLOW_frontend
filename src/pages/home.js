@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from "react-router-dom";
 
 import './home.css';
+import './globalstyle.css';
 import logo from '../assets/svg/flow_logo.svg';
 import firebase from "../firebase"
 import dbman from '../assets/svg/dashboardimg.svg';
@@ -93,8 +94,6 @@ class Home extends Component {
                       "Data"
                       <div className="static_data_text">
                         <b>gal.</b>
-                        __html: {'<br>'}
-                        Water Used this Week
                       </div>    
                     </div>         
                   </div>  
