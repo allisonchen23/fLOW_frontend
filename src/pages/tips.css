@@ -21,6 +21,7 @@
   overflow:none;
   z-index: 1;
   padding: 4vw 0 0 0; 
+   
 }
 
 .body_wrap_t {
@@ -39,6 +40,8 @@
   border-radius: 1.4vw;
   background-color: #fff;
   box-shadow: 0px 0px 7px #0000001A;
+  overflow: hidden;
+  text-align: center;
 }
 
 .box_content_t {
@@ -46,6 +49,7 @@
   height: 100%;
   display: table;
   line-height: 100%;
+  display: inline-block;
 }
    
 #message_box_t {
@@ -60,20 +64,21 @@
    
 .long_t {
   grid-column: span 2;
+  text-align: center;
 }
    
 .full_width_t {
   grid-column: span 3;
+  text-align: center;
+
 }
    
 .double_height_t {
   grid-row: span 2;
 }
 
-.box_content_t h2 {
-  font-family: 'Open-Sans', sans-serif;
-  color: #fff;
-  font-size: 1em;
+
+.box_content_t{
   margin: auto;
   padding-left: 7%;
   padding-right: 7%;
@@ -83,7 +88,18 @@
   line-height: 1em;
   text-align: center;
 }
+.box_text {
+  font-family: 'Open-Sans', sans-serif;
+  font-size: 1em;
+  text-align: center;
+}
+.white_box_text{
+  color: rgb(63, 177, 120);
+}
 
+.blue_box_text {
+  color: rgb(184, 44, 165);
+}
 
 .dropimg {
   display: inline-block;

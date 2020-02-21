@@ -25,7 +25,8 @@ class Welcome extends Component {
   }
 
   render() {
-    return <h2>{this.getMsg()}</h2>;
+    return <h2 className="box_text blue_box_text">{this.getMsg()}</h2>;
+    
   }
 }
 
@@ -45,19 +46,23 @@ class Tips extends Component {
                 </div> 
                 <div className="body_box_t long_t">
                   <div className="box_content_t">
-                    <img className="dropimg" src={drop}/>                 
+                    <img className="dropimg" src={drop}/> 
+                                  
                   </div>  
                 </div> 
                 <div className="body_box_t full_width_t" id="message_box3_t">
                   <div className="box_content_t">
+                  <h2 className="box_text white_box_text"> hello </h2>
                   </div>  
                 </div> 
                 <div className="body_box long_t" id="message_box5_t">
                   <div className="box_content_t">
+                    <h2 className="box_text blue_box_text">hi</h2> 
                   </div>  
                 </div> 
                 <div className="body_box_t">
                   <div className="box_content_t">
+                  <h2 className="box_text white_box_text">normal box</h2>
                   </div>  
                 </div> 
               </div>
