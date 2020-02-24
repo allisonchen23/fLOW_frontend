@@ -10,44 +10,63 @@ export default class Dashboard extends Component {
     constructor() {
         super();
         this.state = {
-          data: [],
+            // start from 2/10/20
+          daily_sums: {1581336000000: 30, 1581422400000: 54, 1581508800000: 100, 1581595200000: 14, 1581681600000: 93, 1581768000000: 24, 1581854400000: 48, 1581940800000: 33, 1582027200000: 5},
           filteredData: [],
           labels: dayLabels
         };
       }
 
-    componentDidMount = () => {
-        let db = firebase.database();
-        let dataRef = db.ref('graph_dummy');
-        var volume = [];
-        dataRef.on('value', snapshot =>{
-          const data = snapshot;
-          data.forEach(childSnapshot => {
-            volume.push(childSnapshot.child('volume').val());
-          })
-          this.setState({ data: volume, filteredData: volume })
-        })
-    }
-
-    filteredData = (dataFilter) => {
-        //let filteredData = this.state.data
-        filteredData = filteredData.filter((data. startDate) => {
-          var i = 0;
-          checkDate = startDate
-          while(!endDate) {
-            for (j = 0; j < data.length; j++) {
-                if (checkDate == data.time)
-                    filteredData[i] = data.volume
-              }
-
+      filteredData = (startDateUnix) => {
+        let daily_sums = this.state.daily_sums;
+        console.log(this.state.daily_sums);
+        let chartData = [];
+        let i = 0;
+        let startDate = new Date(startDateUnix);
+        //let j;
+         let checkDate = new Date(startDate);
+         let checkDateUnix = checkDate.getTime()
+        while(checkDate != startDate.getDate()+7) {
+            if (checkDateUnix in daily_sums) {
+                chartData[i] = daily_sums[checkDateUnix];
+                console.log("if statement")
+            }
+            else {
+                chartData[i] = 0;
+                console.log("else statement")
+            }
+            //console.log(checkDate.getTime());
+            i++;
+            checkDate = checkDate.getDate()+1;
+            //checkDate.setDate(checkDate.getDate() + 1);
+            //checkDateUnix = checkDate.getTime();
+            console.log(checkDate)
+            //console.log(chartData[0])
           }
-        })
         this.setState({
-            filteredData
+            filteredData: chartData
         })
     }
+
+    componentDidMount = () => {
+        // let db = firebase.database();
+        // let dataRef = db.ref('graph_dummy');
+        // let volume = [];
+        // dataRef.on('value', snapshot =>{
+        //   const data = snapshot;
+        //   data.forEach(childSnapshot => {
+        //     volume.push(childSnapshot.child('volume').val());
+        //   })
+        //   this.setState({ daily_sums: volume, filteredData: volume })
+        // })
+        console.log("hello");
+        this.filteredData(1581336000000);
+    }
+
+
 
     render() {
+        console.log(this.state.filteredData)
         const { filteredData, labels } = this.state;
         return (
             <div className={classes.container}>
