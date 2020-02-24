@@ -46,10 +46,46 @@ export default class LineGraph extends Component {
                         fill: true,
                         borderColor: "#97D1F4",
                         backgroundColor: gradientLine,
-                        pointColor: "#97D1F4",
+                        pointBackgroundColor: "#97D1F4",
+                        pointRadius: 3,
+                        hitRadius: 30,
                         pointStrokeColor: "#fff"
                     }
                 ]
+            },
+            plugins: {
+                zoom: {
+                    // Container for pan options
+                    pan: {
+                        // Boolean to enable panning
+                        enabled: true,
+            
+                        // Panning directions. Remove the appropriate direction to disable
+                        // Eg. 'y' would only allow panning in the y direction
+                        // A function that is called as the user is panning and returns the
+                        // available directions can also be used:
+                        //   mode: function({ chart }) {
+                        //     return 'xy';
+                        //   },
+                        mode: 'xy',
+            
+                        rangeMin: {
+                            // Format of min pan range depends on scale type
+                            x: null,
+                            y: null
+                        },
+                        rangeMax: {
+                            // Format of max pan range depends on scale type
+                            x: null,
+                            y: null
+                        },
+            
+                        // Function called while the user is panning
+                        onPan: function({chart}) { console.log(`I'm panning!!!`); },
+                        // Function called once panning is completed
+                        onPanComplete: function({chart}) { console.log(`I was panned!!!`); }
+                    }
+                }
             },
             options: {
                 //Customize chart options
