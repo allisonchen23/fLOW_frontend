@@ -4,13 +4,14 @@ import classes from "./LineGraph.module.css";
 let myLineChart;
 
 //--Chart Style Options--//
-Chart.defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
+Chart.defaults.global.defaultFontFamily = "'Open-Sans', sans-serif"
 Chart.defaults.global.legend.display = false;
 //--Chart Style Options--//
 
+
 export default class LineGraph extends Component {
     chartRef = React.createRef();
-
+    
     componentDidMount() {
         this.buildChart();
     }
@@ -48,6 +49,8 @@ export default class LineGraph extends Component {
             },
             options: {
                 //Customize chart options
+                responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                     yAxes: [{
                       scaleLabel: {
@@ -61,7 +64,15 @@ export default class LineGraph extends Component {
                             labelString: 'Day'
                         }
                     }]
-                  }  
+                  },
+                layout: {
+                    padding: {
+                        left: 20,
+                        right: 20,
+                        top: 0,
+                        bottom: 0
+                    }
+                }
             }
         });
 
@@ -69,7 +80,9 @@ export default class LineGraph extends Component {
 
     render() {
 
+
         return (
+            
             <div className={classes.graphContainer}>
                 <canvas
                     id="myChart"

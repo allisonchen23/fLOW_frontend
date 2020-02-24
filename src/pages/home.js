@@ -103,7 +103,7 @@ class Home extends Component {
                   </div>  
                 </div> 
                 <div className="body_box full_width double_height">
-                  <div className="box_content">
+                  <div className="graph_content">
                   <Dashboard/>
                   </div>  
                 </div> 

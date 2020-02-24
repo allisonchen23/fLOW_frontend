@@ -1,3 +1,7 @@
+html {
+  overflow: hidden;
+}
+
 .github-link {
   font-size: calc(10px + 2vmin);
   color: #61dafb;
