@@ -1,4 +1,3 @@
-//Home Page
 import React, { Component, Fragment } from 'react';
 import { Link } from "react-router-dom";
 
@@ -41,7 +40,7 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      daily_sums: {},
+      daily_sums: {}, //timestamp:sum
       volume: 0
     }
   }
@@ -54,27 +53,52 @@ class Home extends Component {
     })
     // this.setState({ daily_sums: sumsRef.once('value').snapshot.val()});
   }
-  updateDays = (day_index, new_vol) => {
-  }
+
   componentDidMount = () => {
     let db = firebase.database();
-    this.getDaysData(db);
-    let dataRef = db.ref('graph_dummy');
-    let volume = 0;
+    //this.getDaysData(db);
+    let dataRef = db.ref('water_data');
+    let daily_sums = this.state.daily_sums;
+
     dataRef.on('value', snapshot => {
-      const data = snapshot;
-      //each child snapshot is an entry from arduino
+      const data = snapshot; //testing
+      //each cxhild snapshot is an entry from arduino
+      
+      let timestamp;
+      let vol;
+      let date;
+      let noon_timestamp;
+      let time_in_unix_ms;
       data.forEach(childSnapshot => {
-        if (childSnapshot.key > 100 && childSnapshot.key < 150) {
-          volume = volume + childSnapshot.child('volume').val();
-          console.log(volume);
+        timestamp = childSnapshot.key*1000;
+        //console.log(timestamp);
+        vol = childSnapshot.child('volume').val();
+
+        date = new Date();
+        date.setTime(timestamp);
+
+        //Month: starting from 0 (Jan) -> ex. 4 is May
+        noon_timestamp = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 12, 0, 0, 0);
+
+        //console.log(noon_timestamp.getHours());
+
+        time_in_unix_ms = noon_timestamp.getTime()
+
+        if (time_in_unix_ms in daily_sums) {
+          daily_sums[time_in_unix_ms] += vol;
+        } else {
+          daily_sums[time_in_unix_ms] = vol;
         }
+
+        console.log(daily_sums[time_in_unix_ms]);
+
       })
-      this.setState({ volume: volume });
     })
+
+    //this.setState({daily_sums:daily_sums});
   }
   render() {
-    console.log(this.state.volume);
+    console.log(this.state.daily_sums);
     return (
         <React.Fragment>
           
