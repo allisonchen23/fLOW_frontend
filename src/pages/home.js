@@ -107,7 +107,7 @@ class Home extends Component {
               <div className="body_container">
                 <div className="body_box long" id="message_box">
                   <div className="box_content">
-                    <Welcome />n
+                    <Welcome />
                       <img className="dbimg" src={dbman}/>
                   </div>  
                 </div> 
