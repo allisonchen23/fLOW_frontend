@@ -31,10 +31,14 @@ export default class Dashboard extends Component {
     render() {
         const { data, labels } = this.state;
         return (
+
             <div className={classes.container}>
-                <LineGraph
-                    data={data}
-                    labels={labels} />
+              <header>
+                <h2>Your Usage History</h2>
+              </header>
+              <LineGraph
+                data={data}
+                labels={labels} />
             </div>
         )
     }

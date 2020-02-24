@@ -1,18 +1,16 @@
-.container {
-    height: 100%;
-    width: 100%;
-    background: var(--theme-primary);
-    background-color: #fff;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+h2 {
+    color: black;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: "Open Sans", sans-serif;
+    margin-top: 0;
 }
 
 header {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 header > img {
