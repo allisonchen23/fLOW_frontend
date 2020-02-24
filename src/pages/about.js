@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from "react-router-dom";
 
 import './about.css';
+import './globalstyle.css';
 
 class About extends Component { 
   render() {
