@@ -127,8 +127,10 @@ class Home extends Component {
                   </div>  
                 </div> 
                 <div className="body_box full_width double_height">
-                  <div className="box_content">
-                  <Dashboard/>
+                  <div id="graph_wrap">
+                    <div id="graph_htmlcontainer">
+                      <Dashboard/>
+                    </div>
                   </div>  
                 </div> 
               </div>
