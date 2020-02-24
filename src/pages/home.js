@@ -1,4 +1,3 @@
-//Home Page
 import React, { Component, Fragment } from 'react';
 import { Link } from "react-router-dom";
 
@@ -54,30 +53,27 @@ class Home extends Component {
     })
     // this.setState({ daily_sums: sumsRef.once('value').snapshot.val()});
   }
-  updateDays = (day_index, new_vol) => {
-  }
-
 
   componentDidMount = () => {
     let db = firebase.database();
-    this.getDaysData(db);
-    let dataRef = db.ref('graph_dummy');
+    //this.getDaysData(db);
+    let dataRef = db.ref('water_data');
     let daily_sums = this.state.daily_sums;
 
     dataRef.on('value', snapshot => {
       const data = snapshot; //testing
-      //each child snapshot is an entry from arduino
+      //each cxhild snapshot is an entry from arduino
       
       let timestamp;
       let vol;
       let date;
       let noon_timestamp;
-      let time = [1582180966000, 1582180900000,1582180466000,1582180466000,1582180666000,1582180766000,1582180866000];
+      let time_in_unix_ms;
       data.forEach(childSnapshot => {
-        timestamp = 1582180966000; //childSnapshot.key;
+        timestamp = childSnapshot.key*1000;
         //console.log(timestamp);
         vol = childSnapshot.child('volume').val();
-        //console.log(vol);
+
         date = new Date();
         date.setTime(timestamp);
 
@@ -86,13 +82,15 @@ class Home extends Component {
 
         //console.log(noon_timestamp.getHours());
 
-        if (noon_timestamp in daily_sums) {
-          daily_sums[noon_timestamp] += vol;
+        time_in_unix_ms = noon_timestamp.getTime()
+
+        if (time_in_unix_ms in daily_sums) {
+          daily_sums[time_in_unix_ms] += vol;
         } else {
-          daily_sums[noon_timestamp] = vol;
+          daily_sums[time_in_unix_ms] = vol;
         }
 
-        console.log(daily_sums[noon_timestamp]);
+        console.log(daily_sums[time_in_unix_ms]);
 
       })
     })
@@ -101,7 +99,6 @@ class Home extends Component {
   }
   render() {
     console.log(this.state.daily_sums);
-    //console.log(Object.keys(this.state.daily_sums)[0] + " - value: " + this.state[Object.keys(this.state.daily_sums)[0]]);
     return (
         <React.Fragment>
           
@@ -110,7 +107,7 @@ class Home extends Component {
               <div className="body_container">
                 <div className="body_box long" id="message_box">
                   <div className="box_content">
-                    <Welcome />
+                    <Welcome />n
                       <img className="dbimg" src={dbman}/>
                   </div>  
                 </div> 
