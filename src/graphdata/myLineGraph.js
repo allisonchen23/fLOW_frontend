@@ -103,9 +103,10 @@ export default class LineGraph extends Component {
                       },
                       ticks: {
                         padding: 10,
-                        fontColor: '#eeeeee'
+                        fontColor: '#d1d1d1'
                       },
                       gridLines: {
+                        display: false,
                         borderDash: [8,4],
                         color: '#eeeeee',
                         drawTicks: false,
@@ -115,9 +116,10 @@ export default class LineGraph extends Component {
                     }],
                     xAxes: [{
                         gridLines: {
-                            display: false,
-                            drawBorder: false,
-                            color: '#eeeeee'                                
+                            borderDash: [8,4],
+                            color: '#eeeeee',
+                            drawTicks: false,
+                            drawBorder: false                               
                         },
                         ticks: {
                             padding: 10,

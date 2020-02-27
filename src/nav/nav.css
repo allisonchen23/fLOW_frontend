@@ -28,7 +28,7 @@
   top: 0;
   left: 64px;
   width: calc(100vw - 64px);
-  height: 4vw;
+  height: 50px;
 
   z-index: 1000;
 }
@@ -79,7 +79,7 @@
 .logo_wrap a {
   display: flex;
   justify-content: center;
-  height: 4vw;
+  height: 50px;
 }
 
 .logo_wrap a img {
@@ -88,7 +88,7 @@
 }
 
 .logo_wrap {
-  height: 2vw;
+  height: 25px;
   margin-bottom: 85%;
 }
 
