@@ -28,9 +28,16 @@
 #first_image{
   background-image: url(../assets/jpeg/waterimage.jpg);
   /* object-fit: contain; */
-  background-position: 0px -10px;
+  background-position: 0px 0px;
   background-size: cover;
   /* top: -100x; */
+}
+
+#second_image{
+  background-image: url(../assets/jpeg/beach.jpg);
+  background-position: 0px 0px;
+  background-size: cover;
+
 }
    
 #message_box_t {

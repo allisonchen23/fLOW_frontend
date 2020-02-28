@@ -55,12 +55,12 @@ class Tips extends Component {
           <div className="body">
             <div className="body_wrap">
               <div className="body_container">
-                <div className="body_box_t long2_t double_height_t">
+                <div className="body_box_t long2_t triple_height_t">
                   <div className="box_content_t" id="first_image">
                     {/* <img className="dropimg" src={drop}/>              */}
                   </div>  
                 </div> 
-                <div className="body_box_t long2_t double_height_t" id="message_box_t">
+                <div className="body_box_t long2_t triple_height_t" id="message_box_t">
                   <div className="box_content_t">
                     <Welcome />
                   </div>  
@@ -77,9 +77,9 @@ class Tips extends Component {
                     {/* <h3 className="box_text blue_box_text">Showering, bathing and using the toilet account for about two-thirds of the average family’s water usage.</h3>  */}
                   </div>  
                 </div> 
-                <div className="body_box_t double_height_t">
+                <div className="body_box_t triple_height_t" id="second_image">
                   <div className="box_content_t">
-                  <h2 className="box_text white_box_text">normal box</h2>
+                  <h2 className="box_text white_box_text"></h2>
                   </div>  
                 </div> 
               </div>
