@@ -38,7 +38,7 @@ class Tips extends Component {
         <React.Fragment>
           <div className="body">
             <div className="body_wrap">
-              <div className="body_container_t">
+              <div className="body_container">
                 <div className="body_box" id="message_box_t">
                   <div className="box_content_t">
                     <Welcome />

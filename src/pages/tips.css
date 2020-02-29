@@ -3,19 +3,6 @@
   color: #61dafb;
 }
 
-
-.body_wrap_t {
-  width: 100%;
-}
-
-.body_container_t {
-  margin: 2.5vw;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 11vw);
-  grid-gap: 2vw;
-}
-   
 .body_box_t {
   border-radius: 1.4vw;
   background-color: #fff;

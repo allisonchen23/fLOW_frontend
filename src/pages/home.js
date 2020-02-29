@@ -23,7 +23,7 @@ library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCirc
 class Welcome extends Component {
 
   getMsg() {
-    var msg = ['Howdy!', "Welcome to your dashboard!", "Today is a great day to conserve!"];
+    var msg = ['Howdy!', "Welcome to Flow!", "Save Water!"];
     var i = Math.floor(Math.random() * Math.floor(3));
     return msg[i];
   }
@@ -111,24 +111,25 @@ class Home extends Component {
                       <img className="dbimg" src={dbman}/>
                   </div>  
                 </div> 
-                <div className="body_box">
+                <div className="body_box regular">
                   <div className="box_content stat_box">
                     <img className="dropimg" src={drop}/> 
                     <div className="data_text">
                       "Data"
-                      <div className="static_data_text">
                         <b>gal.</b>
-                      </div>    
+                        <p>Water Used This Week</p> 
                     </div>         
                   </div>  
                 </div> 
-                <div className="body_box">
+                <div className="body_box regular">
                   <div className="box_content">
                   </div>  
                 </div> 
                 <div className="body_box full_width double_height">
-                  <div className="box_content">
-                  <Dashboard/>
+                  <div id="graph_wrap">
+                    <div id="graph_htmlcontainer">
+                      <Dashboard/>
+                    </div>
                   </div>  
                 </div> 
               </div>
