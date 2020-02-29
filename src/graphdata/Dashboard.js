@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import classes from "./Dashboard.module.css";
 import LineGraph from "./myLineGraph";
-import { dayLabels } from "./mockData";
+//import { dayLabels } from "./mockData";
 import firebase from "../firebase"
 
+let dayLabels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let monthLabels = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
 
 export default class Dashboard extends Component {
     constructor() {
@@ -30,7 +32,7 @@ export default class Dashboard extends Component {
          endDate.setDate(startDate.getDate()+7);
          let endDateUnix = endDate.getTime();
         while(checkDateUnix <= endDateUnix) {
-            charDays[i] = dayNames[checkDate.getDay()];
+            charDays[i] = dayNames[checkDate.getDay()] + " " + monthLabels[checkDate.getMonth()] + " " + checkDate.getDate() + ", " + checkDate.getFullYear();
             if (checkDateUnix in daily_sums) {
                 chartData[i] = daily_sums[checkDateUnix];
             }

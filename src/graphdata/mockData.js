@@ -17,7 +17,7 @@ export const nationalAverageQuarterData = [
 
 //---Labels---//
 
-export const dayLabels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+//export const dayLabels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 // monthLables: "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
 
 export const quarterLabels = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8", "Week 9", "Week 10", "Week 11", "Week 12"];
