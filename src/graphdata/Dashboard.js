@@ -13,7 +13,7 @@ export default class Dashboard extends Component {
             // start from 2/10/20
           daily_sums: {1581336000000: 30, 1581422400000: 54, 1581508800000: 100, 1581595200000: 14, 1581681600000: 93, 1581768000000: 24, 1581854400000: 48, 1581940800000: 33, 1582027200000: 5},
           filteredData: [],
-          labels: dayLabels
+          labels: [], //dayLabels
         };
       }
 
@@ -21,16 +21,17 @@ export default class Dashboard extends Component {
         let daily_sums = this.state.daily_sums;
         // console.log(this.state.daily_sums);
         let chartData = [];
+        let charDays = [];
+        let dayNames = dayLabels;
         let i = 0;
         let startDate = new Date(startDateUnix);
-        //let j;
          let checkDate = new Date(startDate);
          let checkDateUnix = checkDate.getTime()
          let endDate = new Date(startDateUnix);
          endDate.setDate(startDate.getDate()+7);
          let endDateUnix = endDate.getTime();
         while(checkDateUnix <= endDateUnix) {
-        // while (i<7) {
+            charDays[i] = dayNames[checkDate.getDay()];
             if (checkDateUnix in daily_sums) {
                 chartData[i] = daily_sums[checkDateUnix];
             }
@@ -46,7 +47,8 @@ export default class Dashboard extends Component {
             //console.log(chartData[0])
           }
         this.setState({
-            filteredData: chartData
+            filteredData: chartData,
+            labels: charDays
         })
     }
 
@@ -62,7 +64,7 @@ export default class Dashboard extends Component {
         //   this.setState({ daily_sums: volume, filteredData: volume })
         // })
         console.log("hello");
-        this.filteredData(1581336000000);
+        this.filteredData(1581508800000);
     }
 
 
