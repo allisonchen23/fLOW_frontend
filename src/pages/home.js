@@ -1,8 +1,8 @@
-//Home Page
 import React, { Component, Fragment } from 'react';
 import { Link } from "react-router-dom";
 
 import './home.css';
+import './globalstyle.css';
 import logo from '../assets/svg/flow_logo.svg';
 import firebase from "../firebase"
 import dbman from '../assets/svg/dashboardimg.svg';
@@ -23,7 +23,7 @@ library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCirc
 class Welcome extends Component {
 
   getMsg() {
-    var msg = ['Howdy, fLOW!', "Welcome to your dashboard, fLOW!", "Today is a great day to conserve!"];
+    var msg = ['Howdy!', "Welcome to Flow!", "Save Water!"];
     var i = Math.floor(Math.random() * Math.floor(3));
     return msg[i];
   }
@@ -40,7 +40,7 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      daily_sums: {},
+      daily_sums: {}, //timestamp:sum
       volume: 0
     }
   }
@@ -53,27 +53,52 @@ class Home extends Component {
     })
     // this.setState({ daily_sums: sumsRef.once('value').snapshot.val()});
   }
-  updateDays = (day_index, new_vol) => {
-  }
+
   componentDidMount = () => {
     let db = firebase.database();
-    this.getDaysData(db);
-    let dataRef = db.ref('graph_dummy');
-    let volume = 0;
+    //this.getDaysData(db);
+    let dataRef = db.ref('water_data');
+    let daily_sums = this.state.daily_sums;
+
     dataRef.on('value', snapshot => {
-      const data = snapshot;
-      //each child snapshot is an entry from arduino
+      const data = snapshot; //testing
+      //each cxhild snapshot is an entry from arduino
+      
+      let timestamp;
+      let vol;
+      let date;
+      let noon_timestamp;
+      let time_in_unix_ms;
       data.forEach(childSnapshot => {
-        if (childSnapshot.key > 100 && childSnapshot.key < 150) {
-          volume = volume + childSnapshot.child('volume').val();
-          console.log(volume);
+        timestamp = childSnapshot.key*1000;
+        //console.log(timestamp);
+        vol = childSnapshot.child('volume').val();
+
+        date = new Date();
+        date.setTime(timestamp);
+
+        //Month: starting from 0 (Jan) -> ex. 4 is May
+        noon_timestamp = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 12, 0, 0, 0);
+
+        //console.log(noon_timestamp.getHours());
+
+        time_in_unix_ms = noon_timestamp.getTime()
+
+        if (time_in_unix_ms in daily_sums) {
+          daily_sums[time_in_unix_ms] += vol;
+        } else {
+          daily_sums[time_in_unix_ms] = vol;
         }
+
+        console.log(daily_sums[time_in_unix_ms]);
+
       })
-      this.setState({ volume: volume });
     })
+
+    //this.setState({daily_sums:daily_sums});
   }
   render() {
-    console.log(this.state.volume);
+    console.log(this.state.daily_sums);
     return (
         <React.Fragment>
           
@@ -83,21 +108,28 @@ class Home extends Component {
                 <div className="body_box long" id="message_box">
                   <div className="box_content">
                     <Welcome />
-                    <img className="dbimg" src={dbman}/>
+                      <img className="dbimg" src={dbman}/>
                   </div>  
                 </div> 
-                <div className="body_box">
-                  <div className="box_content">
-                    <img className="dropimg" src={drop}/>                 
+                <div className="body_box regular">
+                  <div className="box_content stat_box">
+                    <img className="dropimg" src={drop}/> 
+                    <div className="data_text">
+                      "Data"
+                        <b>gal.</b>
+                        <p>Water Used This Week</p> 
+                    </div>         
                   </div>  
                 </div> 
-                <div className="body_box">
+                <div className="body_box regular">
                   <div className="box_content">
                   </div>  
                 </div> 
                 <div className="body_box full_width double_height">
-                  <div className="box_content">
-                  <Dashboard/>
+                  <div id="graph_wrap">
+                    <div id="graph_htmlcontainer">
+                      <Dashboard/>
+                    </div>
                   </div>  
                 </div> 
               </div>

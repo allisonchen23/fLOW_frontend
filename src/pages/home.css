@@ -1,99 +1,126 @@
+
+
 .github-link {
   font-size: calc(10px + 2vmin);
   color: #61dafb;
 }
 
-.body {
-  background-color: #F3F4F7;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: top;
-  font-size: calc(20px + 2vmin);
-  font-family: 'Open Sans', sans-serif;
-  color: black;
-  box-shadow: 5px 0px 20px #0000007A;
-  max-width: 95vw;
-  min-width: 95vw;
-  left: 5vw;
-  float: right;
-  overflow:none;
-  z-index: 1;
-  padding: 4vw 0 0 0; 
-}
+/*--------- General Content Box ----------*/
 
-.body_wrap {
-  width: 100%;
-}
-
-.body_container {
-  margin: 2.5vw;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 11vw);
-  grid-gap: 2vw;
-}
-   
 .body_box {
   border-radius: 1.4vw;
   background-color: #fff;
   box-shadow: 0px 0px 7px #0000001A;
+  overflow: hidden;
+  grid-row: span 3;
+}
+
+@media only screen and (min-width: 768px) {
+  .body_box {
+    grid-row: span 2;
+  }
 }
 
 .box_content {
   width: 100%;
   height: 100%;
-  display: table;
+  display: flex;
   line-height: 100%;
+  justify-content: space-evenly;
 }
-   
+
+.long, .full_width {
+  grid-column: span 2;
+}
+
+.full_width {
+  grid-row: 7 span;
+}
+
+.regular {
+  grid-column: span 1;
+}
+
+@media only screen and (min-width: 768px) {
+  .long {
+    grid-column: span 2;
+  }
+  .full_width {
+    grid-column: 4 span;
+    grid-row: 10 span;
+  }
+}
+
+@media only screen and (min-width: 1150px) {
+  .long {
+    grid-column: span 2;
+  }
+    
+  .full_width {
+    grid-column: 4 span;
+  }
+    
+  .double_height {
+    grid-row: span 8;
+  }
+}
+
+/*--------- Message Box ----------*/
+
 #message_box {
   background-color: #97D1F4;
   font-weight: 600;
 }
-   
-.long {
-  grid-column: span 2;
-}
-   
-.full_width {
-  grid-column: span 4;
-}
-   
-.double_height {
-  grid-row: span 2;
-}
 
 .box_content h2 {
-  font-family: 'Open-Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #fff;
-  font-size: 1em;
-  margin: auto;
-  padding-left: 7%;
-  display: table-cell;
-  vertical-align: middle;
-  width: 57%;
-  line-height: 1em;
-  text-align: center;
+  font-size: 1.9rem;
+  height: 12.25vw;
+  line-height: 12.25vw;
+  text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .box_content h2 {
+    height: 7.5vw;
+    line-height: 7.5vw;
+  }
 }
 
 .dbimg {
-  display: table-cell;
   height: 100%;
-  width: auto;
-  margin: 0 auto;
-  padding-top: 1%;
 }
 
+/*--------- Stat Boxes ----------*/
 
 .dropimg {
-  display: inline-block;
   height: 50%;
   width: auto;
-  vertical-align: middle;
+  padding-left: 7%;
 }
 
+.stat_box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: middle;
+}
+
+.static_data_text {
+  font-size: 17pt;
+}
+
+/*--------- Graph Box ----------*/
+
+#graph_wrap {
+  width: 100%;
+  height: 100%;
+}
+
+#graph_htmlcontainer {
+  margin: 2.5%;
+  height: 97.5%;
+}
 
   /* Set Appropriate Padding for Text (GitHub only right now) */
   @media only screen and (max-width: 1000px)
@@ -109,3 +136,5 @@
         padding-top: 20px;
        }
   }
+
+

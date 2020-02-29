@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import classes from "./Dashboard.module.css";
 import LineGraph from "./myLineGraph";
-import chartIcon from "../assets/svg/chart-icon.svg";
 import { dayLabels } from "./mockData";
 import firebase from "../firebase"
 
@@ -73,14 +72,14 @@ export default class Dashboard extends Component {
         // console.log(this.state.filteredData)
         const { filteredData, labels } = this.state;
         return (
+
             <div className={classes.container}>
-            <header>
-                <img src={chartIcon} alt="bar chart icon" />
-                <h1>Water Dashboard</h1>
-            </header>
-                <LineGraph
-                    data={filteredData}
-                    labels={labels} />
+              <header>
+                <h2>Your Usage History</h2>
+              </header>
+              <LineGraph
+                data={filteredData}
+                labels={labels} />
             </div>
         )
     }
