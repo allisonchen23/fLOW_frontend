@@ -19,27 +19,29 @@ export default class Dashboard extends Component {
 
       filteredData = (startDateUnix) => {
         let daily_sums = this.state.daily_sums;
-        console.log(this.state.daily_sums);
+        // console.log(this.state.daily_sums);
         let chartData = [];
         let i = 0;
         let startDate = new Date(startDateUnix);
         //let j;
          let checkDate = new Date(startDate);
          let checkDateUnix = checkDate.getTime()
-        while(checkDate != startDate.getDate()+7) {
+         let endDate = new Date(startDateUnix);
+         endDate.setDate(startDate.getDate()+7);
+         let endDateUnix = endDate.getTime();
+        while(checkDateUnix <= endDateUnix) {
+        // while (i<7) {
             if (checkDateUnix in daily_sums) {
                 chartData[i] = daily_sums[checkDateUnix];
-                console.log("if statement")
             }
             else {
                 chartData[i] = 0;
-                console.log("else statement")
             }
             //console.log(checkDate.getTime());
             i++;
-            checkDate = checkDate.getDate()+1;
-            //checkDate.setDate(checkDate.getDate() + 1);
-            //checkDateUnix = checkDate.getTime();
+            // checkDate = checkDate.getDate()+1;
+            checkDate.setDate(checkDate.getDate() + 1);
+            checkDateUnix = checkDate.getTime();
             console.log(checkDate)
             //console.log(chartData[0])
           }
@@ -66,7 +68,7 @@ export default class Dashboard extends Component {
 
 
     render() {
-        console.log(this.state.filteredData)
+        // console.log(this.state.filteredData)
         const { filteredData, labels } = this.state;
         return (
             <div className={classes.container}>
