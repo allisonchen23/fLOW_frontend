@@ -12,11 +12,8 @@ import drop from '../assets/svg/drop.svg';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
-import Dashboard from "../graphdata/Dashboard.js"
 import LineGraph from "../graphdata/myLineGraph.js";
 import classes from "./home.css";
-
-
 
 // Adds icons
 library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle);
@@ -42,28 +39,19 @@ let dayLabels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday
 let monthLabels = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       daily_sums: {}, //timestamp:sum
       volume: 0,
       filteredData: [],
       labels: [], //dayLabels
+      weekly_usage: 0,
     }
   }
-
-  // getDaysData = (db) => {
-
-  //   let sumsRef = db.ref('daily_sums');
-  //   sumsRef.once('value').then(snapshot => {
-  //     let db_days = snapshot.val();
-  //     this.setState({ daily_sums: db_days });
-  //   })
-  //   // this.setState({ daily_sums: sumsRef.once('value').snapshot.val()});
-  // }
-
-  filteredData = (startDateUnix) => {
+  
+  filteredData = (startDate) => {
     let daily_sums = this.state.daily_sums;
     console.log("DATA BEING PASSED AS PROPS:")
     console.log(daily_sums);
@@ -71,7 +59,6 @@ class Home extends Component {
     let charDays = [];
     let dayNames = dayLabels;
     let i = 0;
-    let startDate = new Date(startDateUnix);
     console.log("startDate" + startDate);
     let checkDate = new Date(startDate);
     let checkDateUnix = checkDate.getTime()
@@ -87,11 +74,6 @@ class Home extends Component {
     let endDateUnix = endDate.getTime();
     while(checkDateUnix <= endDateUnix) {
         charDays[i] = dayNames[checkDate.getDay()] + " " + monthLabels[checkDate.getMonth()] + " " + checkDate.getDate() + ", " + checkDate.getFullYear();
-        console.log(checkDateUnix);
-        console.log(daily_sums);
-        console.log(daily_sums[checkDateUnix]);
-        console.log(checkDateUnix in daily_sums);
-        //console.log(daily_sums[1582459200000]);
 
         if (checkDateUnix in daily_sums) {
             chartData[i] = daily_sums[checkDateUnix];
@@ -99,41 +81,52 @@ class Home extends Component {
         else {
             chartData[i] = 0;
         }
-        //console.log(checkDate.getTime());
         i++;
-        // checkDate = checkDate.getDate()+1;
         checkDate.setDate(checkDate.getUTCDate() + 1);
         checkDateUnix = checkDate.getTime();
-        console.log(checkDate)
-        //console.log(chartData[0])
       }
-      console.log(chartData);
     this.setState({
         filteredData: chartData,
         labels: charDays
     })
-}
+  }
+
+  // getWeeklyWaterUsage = (startDate, endDate) =>
+  // {
+  //   let daily_sums = this.state.daily_sums;
+  //   let gal_used = 0;
+  //   let startDateUnix = startDate.getTime();
+
+  //   while(startDateUnix <= endDate.getTime()) {     
+  //     gal_used += daily_sums[startDateUnix];
+      
+  //     startDate.setDate(startDate.getUTCDate() + 1);
+  //     startDateUnix = startDate.getTime();
+  //   }
+
+  //   this.setState({weekly_usage: gal_used});    
+  // }
 
   componentDidMount = () => {
+    let gal_used = 0;
+    let lastDay = new Date(0);
+
     let db = firebase.database();
-    //this.getDaysData(db);
     let dataRef = db.ref('water_data');
     let daily_sums = this.state.daily_sums;
 
     dataRef.on('value', snapshot => {
-      const data = snapshot; //testing
-      //each cxhild snapshot is an entry from arduino
-      
+      const data = snapshot; //testing    
       let timestamp;
       let vol;
       let date;
       let noon_timestamp;
       let time_in_unix_ms;
+      //each cxhild snapshot is an entry from arduino
       data.forEach(childSnapshot => {
         timestamp = childSnapshot.key*1000; //s to ms
-        //console.log(timestamp);
         vol = childSnapshot.child('volume').val();
-
+        gal_used += vol;
         date = new Date();
         date.setTime(timestamp);
 
@@ -147,7 +140,9 @@ class Home extends Component {
         noon_timestamp.setUTCMinutes(0);
         noon_timestamp.setUTCSeconds(0);
         noon_timestamp.setUTCMilliseconds(0);
-        //console.log(noon_timestamp.getHours());
+
+        if(noon_timestamp > lastDay)
+          lastDay = noon_timestamp;
 
         time_in_unix_ms = noon_timestamp.getTime()
 
@@ -156,15 +151,23 @@ class Home extends Component {
         } else {
           daily_sums[time_in_unix_ms] = vol;
         }
-
-        console.log(daily_sums[time_in_unix_ms]);
-
       })
 
-      this.filteredData(1582459200000);
+      let lastSevenDays =  new Date();
+      lastSevenDays.setUTCFullYear(lastDay.getUTCFullYear());
+      lastSevenDays.setUTCMonth(lastDay.getUTCMonth());
+      lastSevenDays.setUTCDate(lastDay.getUTCDate()-7);
+      lastSevenDays.setUTCHours(12);
+      lastSevenDays.setUTCMinutes(0);
+      lastSevenDays.setUTCSeconds(0);
+      lastSevenDays.setUTCMilliseconds(0);
+
+      this.filteredData(lastSevenDays);
+      
+      this.setState({weekly_usage: gal_used}); 
+    
     })
 
-    //this.setState({daily_sums:daily_sums});
   }
   render() {
     console.log(this.state.daily_sums);
@@ -187,10 +190,9 @@ class Home extends Component {
                   <div className="box_content stat_box">
                     <img className="dropimg" src={drop}/> 
                     <div className="data_text">
-                      "Data"
-                        <b>gal.</b>
-                        <p>Water Used This Week</p> 
-                    </div>         
+                      <b>{this.state.weekly_usage} gal</b> 
+                      <p className="data_text_bot">Total Water Usage</p>
+                    </div>
                   </div>  
                 </div> 
                 <div className="body_box regular">

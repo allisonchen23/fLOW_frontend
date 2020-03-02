@@ -106,8 +106,12 @@
   align-items: middle;
 }
 
-.static_data_text {
-  font-size: 17pt;
+.data_text {
+  font-size: 1.5rem;
+  margin-top: 1em;
+}
+.data_text_bot {
+  font-size: 1.2rem;
 }
 
 /*--------- Graph Box ----------*/
