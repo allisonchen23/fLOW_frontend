@@ -53,13 +53,13 @@ class Home extends Component {
   
   filteredData = (startDate) => {
     let daily_sums = this.state.daily_sums;
-    console.log("DATA BEING PASSED AS PROPS:")
-    console.log(daily_sums);
+    // console.log("DATA BEING PASSED AS PROPS:")
+    // console.log(daily_sums);
     let chartData = [];
     let charDays = [];
     let dayNames = dayLabels;
     let i = 0;
-    console.log("startDate" + startDate);
+    // console.log("startDate" + startDate);
     let checkDate = new Date(startDate);
     let checkDateUnix = checkDate.getTime()
     let endDate = new Date(); 
@@ -70,7 +70,7 @@ class Home extends Component {
     endDate.setUTCMinutes(0);
     endDate.setUTCSeconds(0);
     endDate.setUTCMilliseconds(0);
-    console.log("endDate" + endDate);
+    // console.log("endDate" + endDate);
     let endDateUnix = endDate.getTime();
     while(checkDateUnix <= endDateUnix) {
         charDays[i] = dayNames[checkDate.getDay()] + " " + monthLabels[checkDate.getMonth()] + " " + checkDate.getDate() + ", " + checkDate.getFullYear();
