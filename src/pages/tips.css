@@ -81,8 +81,8 @@
 
 .box_content_t h2{
   margin: auto;
+  padding-top: 3%;
   height: 7.5vw;
-  line-height: 7.5vw;
   text-align: center;
 }
 
@@ -99,7 +99,7 @@
   text-align: center;
 }
 .white_box_text{
-  color:#3B80C4;;
+  color:#3B80C4;
 }
 
 .blue_box_text {
@@ -113,6 +113,29 @@
   vertical-align: middle;
 }
 
+.lightbulb_icon {
+  color: #3B80C4;
+  font-size: 4rem;
+  margin-top: .4em;
+  margin-left: .85em;
+  margin-right: .1em;
+}
+
+.fact_icon {
+  color: #fff;
+  font-size: 5rem;
+  margin-top: .7em;
+  margin-left: .5em;
+  margin-right: .25em;
+}
+
+.water_icon{
+  color: #fff;
+  font-size: 4rem;
+  margin-top: .8em;
+  margin-right: .5em;
+  margin-left: .25em;
+}
 
   /* Set Appropriate Padding for Text (GitHub only right now) */
   @media only screen and (max-width: 1000px)
