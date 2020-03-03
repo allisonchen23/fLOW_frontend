@@ -3,55 +3,108 @@
   color: #61dafb;
 }
 
+
+   
 .body_box_t {
   border-radius: 1.4vw;
   background-color: #fff;
   box-shadow: 0px 0px 7px #0000001A;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1em;
 }
 
 .box_content_t {
   width: 100%;
   height: 100%;
-  display: table;
   line-height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-right: 1em;
+}
+
+#first_image{
+  background-image: url(../assets/jpeg/waterimage.jpg);
+  /* object-fit: contain; */
+  background-position: 0px 0px;
+  background-size: cover;
+  /* top: -100x; */
+}
+
+#second_image{
+  background-image: url(../assets/jpeg/beach.jpg);
+  background-position: 0px 0px;
+  background-size: cover;
+
 }
    
 #message_box_t {
   background-color: #97D1F4;
   font-weight: 600;
+
 }
 
 #message_box5_t{
   background-color: #97D1F4;
   font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  justify-content: space-evenly;
 }
    
-.long_t {
+.long2_t {
   grid-column: span 2;
+  text-align: center;
+}
+.long3_t {
+  grid-column: span 3;
+  text-align: center;
 }
    
 .full_width_t {
-  grid-column: span 3;
+  grid-column: span 4;
+  text-align: center;
+
 }
    
 .double_height_t {
   grid-row: span 2;
 }
 
-.box_content_t h2 {
-  font-family: 'Open-Sans', sans-serif;
-  color: #fff;
-  font-size: 1em;
+.triple_height_t {
+  grid-row: span 3;
+}
+
+
+.box_content_t h2{
   margin: auto;
-  padding-left: 7%;
-  padding-right: 7%;
-  display: table-cell;
-  vertical-align: middle;
-  width: 57%;
-  line-height: 1em;
+  padding-top: 3%;
+  height: 7.5vw;
   text-align: center;
 }
 
+.box_content_t h3{
+  margin: auto;
+  padding-top: 5%;
+  height: 7.5vw;
+  text-align: center;
+}
+
+.box_text {
+  font-family: 'Open-Sans', sans-serif;
+  font-size: 1em;
+  text-align: center;
+}
+.white_box_text{
+  color:#3B80C4;
+}
+
+.blue_box_text {
+  color: #fff;
+}
 
 .dropimg {
   display: inline-block;
@@ -60,6 +113,29 @@
   vertical-align: middle;
 }
 
+.lightbulb_icon {
+  color: #3B80C4;
+  font-size: 4rem;
+  margin-top: .4em;
+  margin-left: .85em;
+  margin-right: .1em;
+}
+
+.fact_icon {
+  color: #fff;
+  font-size: 5rem;
+  margin-top: .7em;
+  margin-left: .5em;
+  margin-right: .25em;
+}
+
+.water_icon{
+  color: #fff;
+  font-size: 4rem;
+  margin-top: .8em;
+  margin-right: .5em;
+  margin-left: .25em;
+}
 
   /* Set Appropriate Padding for Text (GitHub only right now) */
   @media only screen and (max-width: 1000px)
