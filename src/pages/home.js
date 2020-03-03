@@ -7,6 +7,8 @@ import logo from '../assets/svg/flow_logo.svg';
 import firebase from "../firebase"
 import dbman from '../assets/svg/dashboardimg.svg';
 import drop from '../assets/svg/drop.svg';
+import downtrend from '../assets/svg/downtrend.svg';
+import uptrend from '../assets/svg/uptrend.svg';
 
 // Imports icons
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -23,7 +25,7 @@ library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCirc
 class Welcome extends Component {
 
   getMsg() {
-    var msg = ['Howdy!', "Welcome to Flow!", "Save Water!"];
+    var msg = ['Howdy!', "Welcome to fLOW!", "Save Water!"];
     var i = Math.floor(Math.random() * Math.floor(3));
     return msg[i];
   }
@@ -73,7 +75,7 @@ class Home extends Component {
     console.log("endDate" + endDate);
     let endDateUnix = endDate.getTime();
     while(checkDateUnix <= endDateUnix) {
-        charDays[i] = dayNames[checkDate.getDay()] + " " + monthLabels[checkDate.getMonth()] + " " + checkDate.getDate() + ", " + checkDate.getFullYear();
+        charDays[i] = dayNames[checkDate.getDay()] + ", " + monthLabels[checkDate.getMonth()] + " " + checkDate.getDate();// + ", " + checkDate.getFullYear();
 
         if (checkDateUnix in daily_sums) {
             chartData[i] = daily_sums[checkDateUnix];
@@ -190,19 +192,23 @@ class Home extends Component {
                   <div className="box_content stat_box">
                     <img className="dropimg" src={drop}/> 
                     <div className="data_text">
-                      <b>{this.state.weekly_usage} gal</b> 
-                      <p className="data_text_bot">Total Water Usage</p>
+                      <b>{this.state.weekly_usage} <div id="gal">gal.</div></b> 
+                      <p className="data_text_bot">Water Used This Week</p>
                     </div>
                   </div>  
                 </div> 
                 <div className="body_box regular">
-                  <div className="box_content">
-                  </div>  
+                  <div className="box_content stat_box">
+                    <img className="dropimg" src={downtrend}/> 
+                    <div className="data_text">
+                      <b>{this.state.weekly_usage} <div id="gal">%</div></b> 
+                      <p className="data_text_bot">From Last Week</p>
+                    </div>
+                  </div>    
                 </div> 
                 <div className="body_box full_width double_height">
                   <div id="graph_wrap">
                     <div id="graph_htmlcontainer">
-                      
                     <div className={classes.container}>
                       <header>
                         <h2>Your Usage History</h2>
