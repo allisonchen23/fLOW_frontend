@@ -1,13 +1,9 @@
 //Home Page
-import React, { Component, Fragment } from 'react';
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
 
 import './tips.css';
 import './globalstyle.css';
 import logo from '../assets/svg/flow_logo.svg';
-import dbman from '../assets/svg/dashboardimg.svg';
-import drop from '../assets/svg/drop.svg';
-import waterimage from '../assets/jpeg/waterimage.jpg';
 
 // Imports icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -59,7 +55,6 @@ class TipsMessage extends Component {
   }
 }
 
-
 console.log(logo);
 
 class Tips extends Component { 
@@ -71,7 +66,6 @@ class Tips extends Component {
               <div className="body_container">
                 <div className="body_box_t long2_t triple_height_t">
                   <div className="box_content_t" id="first_image">
-                    {/* <img className="dropimg" src={drop}/>              */}
                   </div>  
                 </div> 
                 <div className="body_box_t long2_t triple_height_t" id="message_box_t">
