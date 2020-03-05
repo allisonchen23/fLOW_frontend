@@ -1,4 +1,3 @@
-//Home Page
 import React, { Component, Fragment } from 'react';
 import { Link } from "react-router-dom";
 
@@ -58,7 +57,6 @@ class TipsMessage extends Component {
     return <h2 className="box_text white_box_text">{this.getMsg()}</h2>;
   }
 }
-
 
 console.log(logo);
 

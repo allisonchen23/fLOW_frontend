@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
 
 import './home.css';
 import './globalstyle.css';
@@ -20,8 +19,6 @@ import classes from "./home.css";
 // Adds icons
 library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle);
 
-// Random welcome message
-
 class Welcome extends Component {
 
   getMsg() {
@@ -29,13 +26,11 @@ class Welcome extends Component {
     var i = Math.floor(Math.random() * Math.floor(3));
     return msg[i];
   }
-
+  
   render() {
     return <h2>{this.getMsg()}</h2>;
   }
 }
-
-console.log(logo);
 
 let dayLabels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let monthLabels = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
@@ -46,33 +41,29 @@ class Home extends Component {
 
     this.state = {
       daily_sums: {}, //timestamp:sum
-      volume: 0,
       filteredData: [],
       labels: [], //dayLabels
       weekly_usage: 0,
+      perc_difference: 0
     }
   }
-  
+
   filteredData = (startDate) => {
     let daily_sums = this.state.daily_sums;
-    console.log("DATA BEING PASSED AS PROPS:")
-    console.log(daily_sums);
     let chartData = [];
     let charDays = [];
     let dayNames = dayLabels;
     let i = 0;
-    console.log("startDate" + startDate);
     let checkDate = new Date(startDate);
     let checkDateUnix = checkDate.getTime()
     let endDate = new Date(); 
     endDate.setUTCFullYear(startDate.getUTCFullYear());
     endDate.setUTCMonth(startDate.getUTCMonth());
-    endDate.setUTCDate(startDate.getDate()+7);
+    endDate.setUTCDate(startDate.getDate()+6);
     endDate.setUTCHours(12);
     endDate.setUTCMinutes(0);
     endDate.setUTCSeconds(0);
     endDate.setUTCMilliseconds(0);
-    console.log("endDate" + endDate);
     let endDateUnix = endDate.getTime();
     while(checkDateUnix <= endDateUnix) {
         charDays[i] = dayNames[checkDate.getDay()] + ", " + monthLabels[checkDate.getMonth()] + " " + checkDate.getDate();// + ", " + checkDate.getFullYear();
@@ -93,21 +84,50 @@ class Home extends Component {
     })
   }
 
-  // getWeeklyWaterUsage = (startDate, endDate) =>
-  // {
-  //   let daily_sums = this.state.daily_sums;
-  //   let gal_used = 0;
-  //   let startDateUnix = startDate.getTime();
+  getWeeklyWaterUsage = (startDate, endDate) =>
+  {
+    let startOfPrevWeek =  new Date();
+    startOfPrevWeek.setUTCFullYear(startDate.getUTCFullYear());
+    startOfPrevWeek.setUTCMonth(startDate.getUTCMonth());
+    startOfPrevWeek.setUTCDate(startDate.getUTCDate()-7);
+    startOfPrevWeek.setUTCHours(12);
+    startOfPrevWeek.setUTCMinutes(0);
+    startOfPrevWeek.setUTCSeconds(0);
+    startOfPrevWeek.setUTCMilliseconds(0);
 
-  //   while(startDateUnix <= endDate.getTime()) {     
-  //     gal_used += daily_sums[startDateUnix];
+    let daily_sums = this.state.daily_sums;
+
+    let gal_used = 0;
+    let startDateUnix = startDate.getTime();
+    let endDateUnix = endDate.getTime();
+
+    while(startDateUnix <= endDateUnix) { 
+      if (startDateUnix in daily_sums)
+        gal_used += daily_sums[startDateUnix];
       
-  //     startDate.setDate(startDate.getUTCDate() + 1);
-  //     startDateUnix = startDate.getTime();
-  //   }
+      startDate.setDate(startDate.getUTCDate() + 1);
+      startDateUnix = startDate.getTime();
+    }
 
-  //   this.setState({weekly_usage: gal_used});    
-  // }
+    this.setState({weekly_usage: gal_used});  
+    
+    endDate.setDate(startOfPrevWeek.getUTCDate() + 6);
+
+    startDateUnix = startOfPrevWeek.getTime();
+    endDateUnix = endDate.getTime();
+
+    let prev_gal_used = 0;;
+
+    while(startDateUnix <= endDateUnix) { 
+      if (startDateUnix in daily_sums)
+        prev_gal_used += daily_sums[startDateUnix];      
+      startOfPrevWeek.setDate(startOfPrevWeek.getUTCDate() + 1);
+      startDateUnix = startOfPrevWeek.getTime();
+    }
+    let perc = gal_used/prev_gal_used*100;
+    perc = perc.toFixed(2)
+    this.setState({perc_difference: perc});
+  }
 
   componentDidMount = () => {
     let gal_used = 0;
@@ -158,27 +178,28 @@ class Home extends Component {
       let lastSevenDays =  new Date();
       lastSevenDays.setUTCFullYear(lastDay.getUTCFullYear());
       lastSevenDays.setUTCMonth(lastDay.getUTCMonth());
-      lastSevenDays.setUTCDate(lastDay.getUTCDate()-7);
+      lastSevenDays.setUTCDate(lastDay.getUTCDate()-6);
       lastSevenDays.setUTCHours(12);
       lastSevenDays.setUTCMinutes(0);
       lastSevenDays.setUTCSeconds(0);
       lastSevenDays.setUTCMilliseconds(0);
 
       this.filteredData(lastSevenDays);
-      
-      this.setState({weekly_usage: gal_used}); 
-    
+      this.getWeeklyWaterUsage(lastSevenDays, lastDay);    
     })
-
+    
   }
   render() {
-    console.log(this.state.daily_sums);
     const { filteredData, labels } = this.state;
+    
+    var trendingImage;
+    if (this.state.perc_difference > 0)
+      trendingImage = <img className='dropimg' src={uptrend}/>;
+    else 
+      trendingImage = <img className='dropimg' src={downtrend}/>;
 
-    return (
-      
-        <React.Fragment>
-          
+    return (      
+        <React.Fragment>          
           <div className="body">
             <div className="body_wrap">
               <div className="body_container">
@@ -199,9 +220,11 @@ class Home extends Component {
                 </div> 
                 <div className="body_box regular">
                   <div className="box_content stat_box">
-                    <img className="dropimg" src={downtrend}/> 
+                    {trendingImage}
+                   {/* <img className='dropimg' src={downtrend}/>   */}
+
                     <div className="data_text">
-                      <b>{this.state.weekly_usage} <div id="gal">%</div></b> 
+                      <b>{this.state.perc_difference} <div id="gal">%</div></b> 
                       <p className="data_text_bot">From Last Week</p>
                     </div>
                   </div>    
