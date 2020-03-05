@@ -39,9 +39,8 @@
   grid-gap: 2vw;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1000px) {
   .body_container {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(9, 2.75vw);
   }
 }
