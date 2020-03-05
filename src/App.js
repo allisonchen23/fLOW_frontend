@@ -31,7 +31,6 @@ class App extends Component {
 
          <SideNav/>
          <TopBar/>
-         <Home />
        
           <Switch>
             <Route path = "/pages/home.js" exact component={Home} />
