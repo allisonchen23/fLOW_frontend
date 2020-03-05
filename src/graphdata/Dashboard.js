@@ -20,7 +20,7 @@ export default class Dashboard extends Component {
 
       filteredData = (startDateUnix) => {
         let daily_sums = this.state.daily_sums;
-        // console.log(this.state.daily_sums);
+         console.log(this.state.daily_sums);
         let chartData = [];
         let charDays = [];
         let dayNames = dayLabels;
