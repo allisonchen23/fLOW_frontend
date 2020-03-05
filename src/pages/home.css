@@ -8,7 +8,7 @@
 /*--------- General Content Box ----------*/
 
 .body_box {
-  border-radius: 1.4vw;
+  border-radius: .5vw;
   background-color: #fff;
   box-shadow: 0px 0px 7px #0000001A;
   overflow: hidden;
@@ -42,26 +42,21 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .long {
-    grid-column: span 2;
-  }
   .full_width {
-    grid-column: 4 span;
+    grid-column: 2 span;
     grid-row: 10 span;
   }
 }
 
-@media only screen and (min-width: 1150px) {
-  .long {
-    grid-column: span 2;
-  }
-    
-  .full_width {
-    grid-column: 4 span;
-  }
-    
+@media only screen and (min-width: 1000px) {  
+
   .double_height {
     grid-row: span 8;
+  }
+
+  .full_width {
+    grid-column: 4 span;
+    grid-row: 8 span;
   }
 }
 
@@ -95,23 +90,30 @@
 /*--------- Stat Boxes ----------*/
 
 .dropimg {
-  height: 50%;
+  height: 60px;
   width: auto;
-  padding-left: 7%;
 }
 
 .stat_box {
   display: flex;
-  justify-content: space-evenly;
-  align-items: middle;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7%;
+  box-sizing: border-box;
+}
+
+#gal {
+  display: inline-block;
+  font-size: .75rem;
 }
 
 .data_text {
   font-size: 1.5rem;
-  margin-top: 1em;
+  line-height: 1.25rem;
 }
 .data_text_bot {
-  font-size: 1.2rem;
+  font-size: .9rem;
+  color: #B4B4B4;
 }
 
 /*--------- Graph Box ----------*/
@@ -155,9 +157,10 @@ header {
   display: flex;
   align-items: center;
   width: 100%;
+  margin-bottom: 2%;
 }
 
-header > img {
+/*header > img {
   margin-right: 5px;
 }
 
@@ -197,4 +200,4 @@ button[value=lastquarter] {
   border-left: none;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-}
+}*/
