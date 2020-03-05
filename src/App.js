@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from "react-router-dom";
 import './App.css';
 import logo from './assets/svg/flow_logo.svg';
 // Connect pages
@@ -27,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <BrowserRouter>
+        <BrowserRouter name="app" path="/" handler={App}>
 
          <SideNav/>
          <TopBar/>
@@ -37,7 +38,10 @@ class App extends Component {
             <Route path = "/pages/tips.js" exact component={Tips} />
             <Route path = "/pages/about.js" exact component={About} />
           </Switch>
-          </BrowserRouter>
+          <Redirect from="/" exact to="/pages/home.js" />
+
+        </BrowserRouter>
+
       </React.Fragment>
     );
   }
