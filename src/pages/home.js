@@ -44,7 +44,8 @@ class Home extends Component {
       filteredData: [],
       labels: [], //dayLabels
       weekly_usage: 0,
-      perc_difference: 0
+      perc_difference: 0,
+      sign: []
     }
   }
 
@@ -193,11 +194,15 @@ class Home extends Component {
     const { filteredData, labels } = this.state;
     
     var trendingImage;
-    if (this.state.perc_difference > 0)
-      trendingImage = <img className='dropimg' src={uptrend}/>;
-    else 
-      trendingImage = <img className='dropimg' src={downtrend}/>;
 
+    if (this.state.perc_difference > 0) {
+      trendingImage = <img className='dropimg' src={uptrend}/>;
+      this.sign = <b>+</b>;
+    }
+    else {
+      trendingImage = <img className='dropimg' src={downtrend}/>;
+      this.sign = <b>-</b>;
+     }
     return (      
         <React.Fragment>          
           <div className="body">
@@ -221,10 +226,8 @@ class Home extends Component {
                 <div className="body_box regular">
                   <div className="box_content stat_box">
                     {trendingImage}
-                   {/* <img className='dropimg' src={downtrend}/>   */}
-
                     <div className="data_text">
-                      <b>{this.state.perc_difference} <div id="gal">%</div></b> 
+                      <b>{this.sign}{this.state.perc_difference}<div id="gal">%</div></b> 
                       <p className="data_text_bot">From Last Week</p>
                     </div>
                   </div>    

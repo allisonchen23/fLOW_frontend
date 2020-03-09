@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import './nav.css';
 import logo from '../assets/svg/flow_logo.svg';
+import prof from '../assets/svg/Ac.svg';
 
 // Imports icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -21,22 +22,18 @@ class Top_Bar extends Component {
     return (
         <React.Fragment>
           <nav className = "top_bar">
-          
-          <ul className="top_list">
-            <li className="top_item">
-                  <a> AC </a>
-            </li>
-
-                
-                <li className="top_item">
-                  <Link to="/"><FontAwesomeIcon icon="user-circle" className="top_icons"/></Link>
-                </li>
-                <li className="top_item">
-                  <Link to="/"><FontAwesomeIcon icon="bell" className="top_iconsa"/></Link>
-                </li>
-              
-          </ul>
-        </nav>
+            <ul className="top_list">
+              <li id="name">
+                Allison Chen
+              </li>
+              <li className="top_item">
+                <img src={prof} alt=""/>
+              </li>
+              <li className="top_item">
+                <Link to="/"><FontAwesomeIcon icon="bell" className="top_iconsa"/></Link>
+              </li> 
+            </ul>
+          </nav>
         </React.Fragment>
     );
   }
