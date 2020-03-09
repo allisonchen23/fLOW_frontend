@@ -17,6 +17,7 @@ import {
   BrowserRouter,
   Switch,
   Route,
+  HashRouter
 } from "react-router-dom";
 
 // Adds icons
@@ -28,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <BrowserRouter name="app" path="/" handler={App}>
+        <HashRouter name="app" path="/" handler={App} basename={process.env.PUBLIC_URL}>
 
          <SideNav/>
          <TopBar/>
@@ -40,7 +41,7 @@ class App extends Component {
           </Switch>
           <Redirect from="/" exact to="/pages/home.js" />
 
-        </BrowserRouter>
+        </HashRouter>
 
       </React.Fragment>
     );
