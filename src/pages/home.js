@@ -65,7 +65,7 @@ class Home extends Component {
     let endDate = new Date(); 
     endDate.setUTCFullYear(startDate.getUTCFullYear());
     endDate.setUTCMonth(startDate.getUTCMonth());
-    endDate.setUTCDate(startDate.getDate()+7);
+    endDate.setUTCDate(startDate.getDate()+6);
     endDate.setUTCHours(12);
     endDate.setUTCMinutes(0);
     endDate.setUTCSeconds(0);
@@ -162,10 +162,18 @@ class Home extends Component {
       lastSevenDays.setUTCSeconds(0);
       lastSevenDays.setUTCMilliseconds(0);
 
+      
       this.filteredData(lastSevenDays);
       
       this.setState({weekly_usage: gal_used}); 
     
+      let i = 0;
+      let lastWeekData = []
+      while (i < 7) {
+        lastWeekData.push((lastSevenDays + i).val());
+        i++;
+      }
+      
     })
 
   }
