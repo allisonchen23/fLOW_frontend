@@ -99,16 +99,16 @@ export default class LineGraph extends Component {
                       scaleLabel: {
                         display: true,
                         labelString: 'Volume (ml)',
-                        fontColor: '#d1d1d1',
+                        fontColor: '#666666',
                       },
                       ticks: {
                         padding: 10,
-                        fontColor: '#d1d1d1'
+                        fontColor: '#666666'
                       },
                       gridLines: {
                         display: false,
                         borderDash: [8,4],
-                        color: '#eeeeee',
+                        color: '#666666',
                         drawTicks: false,
                         drawBorder: false
                       }
@@ -123,7 +123,7 @@ export default class LineGraph extends Component {
                         },
                         ticks: {
                             padding: 10,
-                            fontColor: '#d1d1d1'
+                            fontColor: '#666666'
                           }
                     }]
                   },
