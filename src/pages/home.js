@@ -49,8 +49,7 @@ class Home extends Component {
     }
   }
 
-  filteredData = (startDate) => {
-    let daily_sums = this.state.daily_sums;
+  filteredData = (startDate, daily_sums) => {
     let chartData = [];
     let charDays = [];
     let dayNames = dayLabels;
@@ -68,7 +67,6 @@ class Home extends Component {
     let endDateUnix = endDate.getTime();
     while(checkDateUnix <= endDateUnix) {
         charDays[i] = dayNames[checkDate.getDay()] + ", " + monthLabels[checkDate.getMonth()] + " " + checkDate.getDate();// + ", " + checkDate.getFullYear();
-
         if (checkDateUnix in daily_sums) {
             chartData[i] = daily_sums[checkDateUnix];
         }
@@ -77,6 +75,9 @@ class Home extends Component {
         }
         i++;
         checkDate.setDate(checkDate.getUTCDate() + 1);
+        // for some reason when you just do day + 1, sometimes it makes the time off by an hour
+        // this corrects for that
+        checkDate.setUTCHours(12,0,0);
         checkDateUnix = checkDate.getTime();
       }
     this.setState({
@@ -101,7 +102,6 @@ class Home extends Component {
     let gal_used = 0;
     let startDateUnix = startDate.getTime();
     let endDateUnix = endDate.getTime();
-
     while(startDateUnix <= endDateUnix) { 
       if (startDateUnix in daily_sums)
         gal_used += daily_sums[startDateUnix];
@@ -138,6 +138,7 @@ class Home extends Component {
     let dataRef = db.ref('water_data');
     let daily_sums = this.state.daily_sums;
 
+    // use the firebase to sum up entries for sums for every day.
     dataRef.on('value', snapshot => {
       const data = snapshot; //testing    
       let timestamp;
@@ -175,7 +176,6 @@ class Home extends Component {
           daily_sums[time_in_unix_ms] = vol;
         }
       })
-
       let lastSevenDays =  new Date();
       lastSevenDays.setUTCFullYear(lastDay.getUTCFullYear());
       lastSevenDays.setUTCMonth(lastDay.getUTCMonth());
@@ -185,14 +185,14 @@ class Home extends Component {
       lastSevenDays.setUTCSeconds(0);
       lastSevenDays.setUTCMilliseconds(0);
 
-      this.filteredData(lastSevenDays);
+      this.filteredData(lastSevenDays, daily_sums);
       this.getWeeklyWaterUsage(lastSevenDays, lastDay);    
     })
     
   }
   render() {
     const { filteredData, labels } = this.state;
-    
+
     var trendingImage;
 
     if (this.state.perc_difference > 0) {
@@ -218,7 +218,7 @@ class Home extends Component {
                   <div className="box_content stat_box">
                     <img className="dropimg" src={drop}/> 
                     <div className="data_text">
-                      <b>{this.state.weekly_usage} <div id="gal">gal.</div></b> 
+                      <b>{this.state.weekly_usage} <div id="gal">liters.</div></b> 
                       <p className="data_text_bot">Water Used This Week</p>
                     </div>
                   </div>  

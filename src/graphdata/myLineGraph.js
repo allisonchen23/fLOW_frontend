@@ -98,7 +98,7 @@ export default class LineGraph extends Component {
                     yAxes: [{
                       scaleLabel: {
                         display: true,
-                        labelString: 'Volume (ml)',
+                        labelString: 'Volume (L)',
                         fontColor: '#666666',
                       },
                       ticks: {
