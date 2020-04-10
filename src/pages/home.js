@@ -69,7 +69,7 @@ class Home extends Component {
     while(checkDateUnix <= endDateUnix) {
         charDays[i] = dayNames[checkDate.getDay()] + ", " + monthLabels[checkDate.getMonth()] + " " + checkDate.getDate();// + ", " + checkDate.getFullYear();
         if (checkDateUnix in daily_sums) {
-            chartData[i] = daily_sums[checkDateUnix];
+            chartData[i] = daily_sums[checkDateUnix].toFixed(2);
         }
         else {
             chartData[i] = 0;
@@ -120,7 +120,7 @@ class Home extends Component {
 
     let prev_gal_used = 0;;
 
-    while(startDateUnix <= endDateUnix) { 
+    while(startDateUnix <= endDateUnix) {
       if (startDateUnix in daily_sums)
         prev_gal_used += daily_sums[startDateUnix];      
       startOfPrevWeek.setDate(startOfPrevWeek.getUTCDate() + 1);
