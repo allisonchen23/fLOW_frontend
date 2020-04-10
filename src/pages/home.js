@@ -49,6 +49,7 @@ class Home extends Component {
     }
   }
 
+  //takes daily sums and stores a week's worth of data from startDate
   filteredData = (startDate, daily_sums) => {
     let chartData = [];
     let charDays = [];
@@ -68,7 +69,7 @@ class Home extends Component {
     while(checkDateUnix <= endDateUnix) {
         charDays[i] = dayNames[checkDate.getDay()] + ", " + monthLabels[checkDate.getMonth()] + " " + checkDate.getDate();// + ", " + checkDate.getFullYear();
         if (checkDateUnix in daily_sums) {
-            chartData[i] = daily_sums[checkDateUnix];
+            chartData[i] = daily_sums[checkDateUnix].toFixed(2);
         }
         else {
             chartData[i] = 0;
@@ -86,7 +87,7 @@ class Home extends Component {
     })
   }
 
-  getWeeklyWaterUsage = (startDate, endDate) =>
+  getWeeklyWaterUsage = (startDate, endDate, daily_sums) =>
   {
     let startOfPrevWeek =  new Date();
     startOfPrevWeek.setUTCFullYear(startDate.getUTCFullYear());
@@ -97,7 +98,7 @@ class Home extends Component {
     startOfPrevWeek.setUTCSeconds(0);
     startOfPrevWeek.setUTCMilliseconds(0);
 
-    let daily_sums = this.state.daily_sums;
+    //let daily_sums = this.state.daily_sums;
 
     let gal_used = 0;
     let startDateUnix = startDate.getTime();
@@ -119,7 +120,7 @@ class Home extends Component {
 
     let prev_gal_used = 0;;
 
-    while(startDateUnix <= endDateUnix) { 
+    while(startDateUnix <= endDateUnix) {
       if (startDateUnix in daily_sums)
         prev_gal_used += daily_sums[startDateUnix];      
       startOfPrevWeek.setDate(startOfPrevWeek.getUTCDate() + 1);
@@ -136,10 +137,11 @@ class Home extends Component {
 
     let db = firebase.database();
     let dataRef = db.ref('water_data');
-    let daily_sums = this.state.daily_sums;
+    let daily_sums = {};//this.state.daily_sums;
 
     // use the firebase to sum up entries for sums for every day.
     dataRef.on('value', snapshot => {
+      daily_sums = {}; //reset daily_sums otherwise when you add data but don't refresh the page, it just adds existing data again
       const data = snapshot; //testing    
       let timestamp;
       let vol;
@@ -186,7 +188,7 @@ class Home extends Component {
       lastSevenDays.setUTCMilliseconds(0);
 
       this.filteredData(lastSevenDays, daily_sums);
-      this.getWeeklyWaterUsage(lastSevenDays, lastDay);    
+      this.getWeeklyWaterUsage(lastSevenDays, lastDay, daily_sums);    
     })
     
   }
