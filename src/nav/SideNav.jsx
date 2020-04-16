@@ -26,7 +26,7 @@ class Side_Nav extends Component {
             <nav>
               <ul className="nav_list">
                 <li className="nav_item">
-                  <Link class="nav_square" to="/pages/home.js">
+                  <Link class="nav_square" to="/pages/dashboard.js">
                     <FontAwesomeIcon icon="home" className="nav_icon"/>
                   </Link> 
                 </li>

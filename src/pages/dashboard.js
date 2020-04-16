@@ -35,7 +35,7 @@ class Welcome extends Component {
 let dayLabels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let monthLabels = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
 
-class Home extends Component {
+class Dashboard extends Component {
   constructor() {
     super();
 
@@ -255,4 +255,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Dashboard;

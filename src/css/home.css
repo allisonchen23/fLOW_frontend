@@ -1,0 +1,80 @@
+.body {
+  width: 100vw;
+  left: 0;
+}
+
+.hero {
+  position: fixed;
+  background: linear-gradient(341deg, #2f7deb, #89f7fe);
+  background-size: 400% 400%;
+  -webkit-animation: flowanimation 12s ease infinite;
+  animation: flowanimation 12s ease infinite;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+
+}
+
+@-webkit-keyframes flowanimation {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+@keyframes flowanimation {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.nav {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+}
+
+.nav > * {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+#left-item {
+  margin-right: 3em;
+}
+
+#left-item:hover {
+  
+}
+
+
+#right-item {
+  padding: .5em 3em;
+  background-color: rgba(255,255,255,.19);
+  border-radius: 10%/50%;
+}
+
+.logo {
+  width: 20%;
+  height: auto;
+  min-width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circles {
+  width: 100vw;
+  height: auto;
+  position: relative;
+  top: 0;
+  z-index: 1001;
+}

@@ -1,0 +1,28 @@
+<svg id="Component_2_1" data-name="Component 2 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2116" height="1296" viewBox="0 0 2116 1296">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.066" y1="-0.091" x2="1.326" y2="1.198" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#66a6ff"/>
+      <stop offset="1" stop-color="#89f7fe"/>
+    </linearGradient>
+    <filter id="Rectangle_1" x="7" y="36" width="2100" height="1260" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feFlood flood-color="#77cdff" flood-opacity="0.4"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rectangle_1)">
+    <rect id="Rectangle_1-2" data-name="Rectangle 1" width="1920" height="1080" transform="translate(97 116)" fill="url(#linear-gradient)"/>
+  </g>
+  <g id="Group_3" data-name="Group 3">
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="89.5" cy="89.5" r="89.5" transform="translate(470)" fill="#fff" opacity="0.1"/>
+    <circle id="Ellipse_4" data-name="Ellipse 4" cx="129.5" cy="129.5" r="129.5" transform="translate(1412 397)" fill="#fff" opacity="0.03"/>
+    <circle id="Ellipse_6" data-name="Ellipse 6" cx="129.5" cy="129.5" r="129.5" transform="translate(749 981)" fill="#fff" opacity="0.03"/>
+    <circle id="Ellipse_8" data-name="Ellipse 8" cx="64.5" cy="64.5" r="64.5" transform="translate(1348 737)" fill="#fff" opacity="0.03"/>
+    <circle id="Ellipse_9" data-name="Ellipse 9" cx="64.5" cy="64.5" r="64.5" transform="translate(1283 802)" fill="#fff" opacity="0.03"/>
+    <circle id="Ellipse_7" data-name="Ellipse 7" cx="187" cy="187" r="187" transform="translate(0 737)" fill="#fff" opacity="0.03"/>
+    <circle id="Ellipse_5" data-name="Ellipse 5" cx="173.5" cy="173.5" r="173.5" transform="translate(1239 116)" fill="#fff" opacity="0.03"/>
+    <circle id="Ellipse_3" data-name="Ellipse 3" cx="147.5" cy="147.5" r="147.5" transform="translate(1821 848)" fill="#fff" opacity="0.07"/>
+  </g>
+</svg>
