@@ -3,9 +3,9 @@ import { Redirect } from "react-router-dom";
 import './App.css';
 import logo from './assets/svg/flow_logo.svg';
 // Connect pages
+import Dashboard from "./pages/dashboard.js"
 import Home from "./pages/home.js"
 import Tips from "./pages/tips.js"
-import About from "./pages/about.js"
 import SideNav from "./nav/SideNav.jsx"
 import TopBar from "./nav/TopBar.jsx"
 
@@ -35,9 +35,9 @@ class App extends Component {
          <TopBar/>
        
           <Switch>
+            <Route path = "/pages/dashboard.js" exact component={Dashboard} />
             <Route path = "/pages/home.js" exact component={Home} />
             <Route path = "/pages/tips.js" exact component={Tips} />
-            <Route path = "/pages/about.js" exact component={About} />
           </Switch>
           <Redirect from="/" exact to="/pages/home.js" />
 

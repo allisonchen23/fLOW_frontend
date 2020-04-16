@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from "react-router-dom";
 
-import './tips.css';
-import './globalstyle.css';
+import '../css/tips.css';
+import '../css/globalstyle.css';
 import logo from '../assets/svg/flow_logo.svg';
 import dbman from '../assets/svg/dashboardimg.svg';
 import drop from '../assets/svg/drop.svg';

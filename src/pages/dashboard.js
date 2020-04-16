@@ -1,8 +1,7 @@
-<<<<<<< Updated upstream
 import React, { Component } from 'react';
 
-import './home.css';
-import './globalstyle.css';
+import '../css/dashboard.css';
+import '../css/globalstyle.css';
 import logo from '../assets/svg/flow_logo.svg';
 import firebase from "../firebase"
 import dbman from '../assets/svg/dashboardimg.svg';
@@ -15,7 +14,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 import LineGraph from "../graphdata/myLineGraph.js";
-import classes from "./home.css";
+import classes from "../css/dashboard.css";
 
 // Adds icons
 library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle);
@@ -110,7 +109,7 @@ class Home extends Component {
       startDate.setDate(startDate.getUTCDate() + 1);
       startDateUnix = startDate.getTime();
     }
-
+    gal_used = gal_used.toFixed(2);
     this.setState({weekly_usage: gal_used});  
     
     endDate.setDate(startOfPrevWeek.getUTCDate() + 6);
@@ -127,7 +126,7 @@ class Home extends Component {
       startDateUnix = startOfPrevWeek.getTime();
     }
     let perc = gal_used/prev_gal_used*100;
-    perc = perc.toFixed(2)
+    perc = perc.toFixed(2);
     this.setState({perc_difference: perc});
   }
 
@@ -219,7 +218,7 @@ class Home extends Component {
                   <div className="box_content stat_box">
                     <img className="dropimg" src={drop}/> 
                     <div className="data_text">
-                      <b>{this.state.weekly_usage} <div id="gal">gal.</div></b> 
+                      <b>{this.state.weekly_usage} <div id="gal">L</div></b> 
                       <p className="data_text_bot">Water Used This Week</p>
                     </div>
                   </div>  
@@ -228,7 +227,7 @@ class Home extends Component {
                   <div className="box_content stat_box">
                     {trendingImage}
                     <div className="data_text">
-                      <b>{this.sign}{this.state.perc_difference}<div id="gal">%</div></b> 
+                      <b>{this.sign}{this.state.perc_difference} <div id="gal">%</div></b> 
                       <p className="data_text_bot">From Last Week</p>
                     </div>
                   </div>    
@@ -257,5 +256,3 @@ class Home extends Component {
 }
 
 export default Home;
-=======
->>>>>>> Stashed changes

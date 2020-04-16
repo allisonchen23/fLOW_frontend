@@ -98,8 +98,13 @@ export default class LineGraph extends Component {
                     yAxes: [{
                       scaleLabel: {
                         display: true,
+<<<<<<< Updated upstream
                         labelString: 'Volume (ml)',
                         fontColor: '#d1d1d1',
+=======
+                        labelString: 'Volume (L)',
+                        fontColor: '#666666',
+>>>>>>> Stashed changes
                       },
                       ticks: {
                         padding: 10,
