@@ -11,7 +11,7 @@ Chart.defaults.global.legend.display = false;
 
 export default class LineGraph extends Component {
     chartRef = React.createRef();
-    
+
     componentDidMount() {
         this.buildChart();
     }
@@ -34,7 +34,7 @@ export default class LineGraph extends Component {
         gradientLine.addColorStop(1, "rgb(151, 209, 244, 0)");
 
         myLineChart = new Chart(myChartRef, {
-            
+
             type: "line",
             data: {
                 //Bring in data
@@ -59,7 +59,7 @@ export default class LineGraph extends Component {
                     pan: {
                         // Boolean to enable panning
                         enabled: true,
-            
+
                         // Panning directions. Remove the appropriate direction to disable
                         // Eg. 'y' would only allow panning in the y direction
                         // A function that is called as the user is panning and returns the
@@ -68,7 +68,7 @@ export default class LineGraph extends Component {
                         //     return 'xy';
                         //   },
                         mode: 'xy',
-            
+
                         rangeMin: {
                             // Format of min pan range depends on scale type
                             x: null,
@@ -79,7 +79,7 @@ export default class LineGraph extends Component {
                             x: null,
                             y: null
                         },
-            
+
                         // Function called while the user is panning
                         onPan: function({chart}) { console.log(`I'm panning!!!`); },
                         // Function called once panning is completed
@@ -98,22 +98,17 @@ export default class LineGraph extends Component {
                     yAxes: [{
                       scaleLabel: {
                         display: true,
-<<<<<<< Updated upstream
                         labelString: 'Volume (ml)',
                         fontColor: '#d1d1d1',
-=======
-                        labelString: 'Volume (L)',
-                        fontColor: '#666666',
->>>>>>> Stashed changes
                       },
                       ticks: {
                         padding: 10,
-                        fontColor: '#d1d1d1'
+                        fontColor: '#666666'
                       },
                       gridLines: {
                         display: false,
                         borderDash: [8,4],
-                        color: '#eeeeee',
+                        color: '#666666',
                         drawTicks: false,
                         drawBorder: false
                       }
@@ -124,17 +119,17 @@ export default class LineGraph extends Component {
                             borderDash: [8,4],
                             color: '#eeeeee',
                             drawTicks: false,
-                            drawBorder: false                               
+                            drawBorder: false
                         },
                         ticks: {
                             padding: 10,
-                            fontColor: '#d1d1d1'
+                            fontColor: '#666666'
                           }
                     }]
                   },
 
             },
-            
+
         });
 
     }
@@ -143,7 +138,7 @@ export default class LineGraph extends Component {
 
 
         return (
-            
+
             <div className={classes.graphContainer}>
                 <canvas
                     id="myChart"
