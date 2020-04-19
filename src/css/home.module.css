@@ -1,5 +1,5 @@
 .body {
-  width: 100vw;
+  width: 100%;
   left: 0;
 }
 
@@ -13,8 +13,6 @@
   height: 100vh;
   left: 0;
   top: 0;
-  z-index: 1000;
-
 }
 
 @-webkit-keyframes flowanimation {
@@ -35,7 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1002;
+  margin-top: 40px;
 }
 
 .nav > * {
@@ -44,21 +42,33 @@
   font-size: 1rem;
   text-align: center;
   text-decoration: none;
-}
-
-#left-item {
-  margin-right: 3em;
-}
-
-#left-item:hover {
-  
-}
-
-
-#right-item {
-  padding: .5em 3em;
-  background-color: rgba(255,255,255,.19);
+  width: 150px;
   border-radius: 10%/50%;
+  padding: .5em 0;
+  background-size: 100% 200%; 
+  -webkit-transition: background-position 1s;
+  -moz-transition: background-position 1s;
+  transition: all .3s ease-in-out;
+  transition-delay: 0.0s, 0.15s;
+  background-position: 0 -100%; 
+}
+
+#leftItem {
+  margin-right: 2em;
+  background-image: linear-gradient(to top, transparent 50%, rgb(255,255,255) 50%);
+}
+
+#rightItem {
+  background-image: linear-gradient(to top, rgba(255,255,255,.2) 50%, rgba(255,255,255,1) 50%);
+}
+
+#leftItem:hover, #rightItem:hover {
+  background-position: 0 0;
+  color: #2D98DA;
+}
+
+.hero {
+  z-index: -1;
 }
 
 .logo {
@@ -76,5 +86,4 @@
   height: auto;
   position: relative;
   top: 0;
-  z-index: 1001;
 }

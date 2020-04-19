@@ -30,14 +30,21 @@ class App extends Component {
     return (
       <React.Fragment>
         <HashRouter name="app" path="/" handler={App} basename={process.env.PUBLIC_URL}>
-
-         <SideNav/>
-         <TopBar/>
        
           <Switch>
-            <Route path = "/pages/dashboard.js" exact component={Dashboard} />
-            <Route path = "/pages/home.js" exact component={Home} />
-            <Route path = "/pages/tips.js" exact component={Tips} />
+            <Route path = "/pages/home.js" exact component={Home}>
+
+            </Route>
+            <Route path = "/pages/dashboard.js">
+              <Dashboard/>
+              <SideNav/>
+              <TopBar/>
+            </Route>
+            <Route path = "/pages/tips.js">
+              <Tips/>
+              <SideNav/>
+              <TopBar/>
+            </Route>
           </Switch>
           <Redirect from="/" exact to="/pages/home.js" />
 
