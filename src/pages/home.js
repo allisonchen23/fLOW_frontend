@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from "react-router-dom";
 
-import styles from '../css/home.module.css';
+import style from '../css/home.module.css';
 import logo from '../assets/svg/flow_logo.svg';
 import bg from '../assets/svg/circles.svg'
 
@@ -20,18 +20,18 @@ class Home extends Component {
   render() {
     return (
         <React.Fragment>
-          <div className={styles.body}>
-            <div className={styles.nav}>
-                <a href="login.js" id={styles.leftItem}>
+          <div className={style.body}>
+            <div className={style.hero}>
+              <img className={style.logo} src={logo}/>
+              <img className={style.circles} src={bg}/> 
+            </div>
+            <div className={style.nav}>
+                <a href="login.js" id={style.leftItem}>
                   Login
                 </a>
-                <a href="login.js#signup" id={styles.rightItem}>
+                <a href="login.js#signup" id={style.rightItem}>
                   Get Started
                 </a>
-            </div>
-            <div className={styles.hero}>
-              <img className={styles.logo} src={logo}/>
-              <img className={styles.circles} src={bg}/> 
             </div>
           </div>
         </React.Fragment>

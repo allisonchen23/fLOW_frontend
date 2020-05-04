@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import '../css/dashboard.css';
-import '../css/globalstyle.css';
+import style from '../css/dashboard.module.css';
+import globalStyle from '../css/globalstyle.module.css';
 import logo from '../assets/svg/flow_logo.svg';
 import firebase from "../firebase"
 import dbman from '../assets/svg/dashboardimg.svg';
@@ -14,7 +14,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 import LineGraph from "../graphdata/myLineGraph.js";
-import classes from "../css/dashboard.css";
+import classes from "../css/dashboard.module.css";
 
 // Adds icons
 library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle);
@@ -205,36 +205,36 @@ class Dashboard extends Component {
      }
     return (      
         <React.Fragment>          
-          <div className="body">
-            <div className="body_wrap">
-              <div className="body_container">
-                <div className="body_box long" id="message_box">
-                  <div className="box_content">
+          <div className={globalStyle.body}>
+            <div className={globalStyle.bodyWrap}>
+              <div className={globalStyle.bodyContainer}>
+                <div className={`${style.bodyBox} ${style.messageBox} ${style.long}`}>
+                  <div className={style.boxContent}>
                     <Welcome />
-                      <img className="dbimg" src={dbman}/>
-                  </div>  
+                      <img className={style.dbimg} src={dbman}/>
+                  </div>    
                 </div> 
-                <div className="body_box regular">
-                  <div className="box_content stat_box">
-                    <img className="dropimg" src={drop}/> 
-                    <div className="data_text">
-                      <b>{this.state.weekly_usage} <div id="gal">L</div></b> 
-                      <p className="data_text_bot">Water Used This Week</p>
+                <div className={`${style.bodyBox} ${style.regular}`}>
+                  <div className={`${style.boxContent} ${style.statBox}`}>
+                    <img className={style.dropimg} src={drop}/> 
+                    <div className={`${style.boxContent} ${style.statBox}`}>
+                      <b>{this.state.weekly_usage} <div className={style.gal}>L</div></b> 
+                      <p className={style.dataTextBot}>Water Used This Week</p>
                     </div>
                   </div>  
                 </div> 
-                <div className="body_box regular">
-                  <div className="box_content stat_box">
+                <div className={`${style.bodyBox} ${style.regular}`}>
+                  <div className={`${style.boxContent} ${style.statBox}`}>
                     {trendingImage}
-                    <div className="data_text">
-                      <b>{this.sign}{this.state.perc_difference} <div id="gal">%</div></b> 
-                      <p className="data_text_bot">From Last Week</p>
+                    <div className={`${style.boxContent} ${style.statBox}`}>
+                      <b>{this.sign}{this.state.perc_difference} <div className={style.gal}>%</div></b> 
+                      <p className={style.dataTextBot}>From Last Week</p>
                     </div>
                   </div>    
                 </div> 
-                <div className="body_box full_width double_height">
-                  <div id="graph_wrap">
-                    <div id="graph_htmlcontainer">
+                <div className={`${style.bodyBox} ${style.fullWidth} ${style.doubleHeight}`}>
+                  <div id={style.graphWrap}>
+                    <div id={style.graphHtmlContainer}>
                     <div className={classes.container}>
                       <header>
                         <h2>Your Usage History</h2>
