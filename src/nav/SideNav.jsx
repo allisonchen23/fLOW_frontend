@@ -36,7 +36,8 @@ class Side_Nav extends Component {
                   </Link>
                 </li>
                 <li className="nav_item"> 
-                  <Link class="nav_square" to="/pages/about.js">
+                  {/* <Link class="nav_square" to="/pages/about.js"> */}
+                  <Link class="nav_square" to="/pages/login.js">
                     <FontAwesomeIcon icon="question-circle" className="nav_icon"/>
                   </Link>
                 </li>
