@@ -26,17 +26,17 @@ class Side_Nav extends Component {
             <nav>
               <ul className="nav_list">
                 <li className="nav_item">
-                  <Link class="nav_square" to="/pages/home.js">
+                  <Link className="nav_square" to="/pages/home.js">
                     <FontAwesomeIcon icon="home" className="nav_icon"/>
                   </Link> 
                 </li>
                 <li className="nav_item"> 
-                  <Link class="nav_square" to="/pages/tips.js">
+                  <Link className="nav_square" to="/pages/tips.js">
                     <FontAwesomeIcon icon="lightbulb" className="nav_icon"/>
                   </Link>
                 </li>
                 <li className="nav_item"> 
-                  <Link class="nav_square" to="/pages/about.js">
+                  <Link className="nav_square" to="/pages/about.js">
                     <FontAwesomeIcon icon="question-circle" className="nav_icon"/>
                   </Link>
                 </li>
