@@ -115,6 +115,11 @@ export default class LineGraph extends Component {
 
                     }],
                     xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Day of Week',
+                            fontColor: '#666666',
+                          },
                         gridLines: {
                             borderDash: [8,4],
                             color: '#eeeeee',

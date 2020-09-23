@@ -110,12 +110,15 @@ class About extends Component {
             <div className="body_wrap">
               <div className="body_container flex_container">
               {/* <div className="body_box full_width double_height"> */}
+                <div>
+                  <p>Please select the devices you would like to view data for.</p>
+                </div>
                 <div className="body_box select_menu " id="message_box">
                   <Select 
                     isMulti
                     onChange={this.onSelectChange}
                     options={this.state.selectOptions}/>
-                  <button className="centered" onClick={this.submitButton} >
+                  <button className="button" onClick={this.submitButton} >
                     Reload Graph
                   </button>
                 </div>
