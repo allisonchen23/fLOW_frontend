@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/fLOW_frontend/static/css/main.35c6f8ac.chunk.css",
-    "main.js": "/fLOW_frontend/static/js/main.22eb6afa.chunk.js",
-    "main.js.map": "/fLOW_frontend/static/js/main.22eb6afa.chunk.js.map",
+    "main.css": "/fLOW_frontend/static/css/main.4d3be7bb.chunk.css",
+    "main.js": "/fLOW_frontend/static/js/main.a4661f20.chunk.js",
+    "main.js.map": "/fLOW_frontend/static/js/main.a4661f20.chunk.js.map",
     "runtime-main.js": "/fLOW_frontend/static/js/runtime-main.1893abb4.js",
     "runtime-main.js.map": "/fLOW_frontend/static/js/runtime-main.1893abb4.js.map",
-    "static/js/2.80a992c8.chunk.js": "/fLOW_frontend/static/js/2.80a992c8.chunk.js",
-    "static/js/2.80a992c8.chunk.js.map": "/fLOW_frontend/static/js/2.80a992c8.chunk.js.map",
+    "static/js/2.c02f1ed1.chunk.js": "/fLOW_frontend/static/js/2.c02f1ed1.chunk.js",
+    "static/js/2.c02f1ed1.chunk.js.map": "/fLOW_frontend/static/js/2.c02f1ed1.chunk.js.map",
     "index.html": "/fLOW_frontend/index.html",
-    "precache-manifest.6a787a1b12523fad22f65b434fc97081.js": "/fLOW_frontend/precache-manifest.6a787a1b12523fad22f65b434fc97081.js",
+    "precache-manifest.c263bfdb0805d9c03e1771772a3fed74.js": "/fLOW_frontend/precache-manifest.c263bfdb0805d9c03e1771772a3fed74.js",
     "service-worker.js": "/fLOW_frontend/service-worker.js",
-    "static/css/main.35c6f8ac.chunk.css.map": "/fLOW_frontend/static/css/main.35c6f8ac.chunk.css.map",
-    "static/js/2.80a992c8.chunk.js.LICENSE": "/fLOW_frontend/static/js/2.80a992c8.chunk.js.LICENSE",
+    "static/css/main.4d3be7bb.chunk.css.map": "/fLOW_frontend/static/css/main.4d3be7bb.chunk.css.map",
+    "static/js/2.c02f1ed1.chunk.js.LICENSE": "/fLOW_frontend/static/js/2.c02f1ed1.chunk.js.LICENSE",
     "static/media/Ac.svg": "/fLOW_frontend/static/media/Ac.836d2017.svg",
     "static/media/tips.css": "/fLOW_frontend/static/media/beach.70d8f3b9.jpg",
-    "static/media/dashboardimg.svg": "/fLOW_frontend/static/media/dashboardimg.e16f80f0.svg",
-    "static/media/downtrend.svg": "/fLOW_frontend/static/media/downtrend.2db833f7.svg",
-    "static/media/drop.svg": "/fLOW_frontend/static/media/drop.f3451433.svg",
-    "static/media/flow_logo.svg": "/fLOW_frontend/static/media/flow_logo.134cada3.svg",
-    "static/media/uptrend.svg": "/fLOW_frontend/static/media/uptrend.c9a9030e.svg",
+    "static/media/dashboardimg.svg": "/fLOW_frontend/static/media/dashboardimg.cfb6bfc4.svg",
+    "static/media/downtrend.svg": "/fLOW_frontend/static/media/downtrend.58f7c159.svg",
+    "static/media/drop.svg": "/fLOW_frontend/static/media/drop.6b48d098.svg",
+    "static/media/flow_logo.svg": "/fLOW_frontend/static/media/flow_logo.2d7e1bda.svg",
+    "static/media/uptrend.svg": "/fLOW_frontend/static/media/uptrend.1a723925.svg",
     "static/media/waterimage.jpg": "/fLOW_frontend/static/media/waterimage.2fc0155a.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.1893abb4.js",
-    "static/js/2.80a992c8.chunk.js",
-    "static/css/main.35c6f8ac.chunk.css",
-    "static/js/main.22eb6afa.chunk.js"
+    "static/js/2.c02f1ed1.chunk.js",
+    "static/css/main.4d3be7bb.chunk.css",
+    "static/js/main.a4661f20.chunk.js"
   ]
 }
