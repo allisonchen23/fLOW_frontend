@@ -7,10 +7,10 @@ Code for fLOW, a personal water usage tracker. fLOW is a project through Creativ
   * [Project Overview](#Project-Overview)
   * [Motivation](#Motivation)
   * [Check Out Our Website!](#Check-Out-Our-Website!)
-  * [About Our Site](#About Our Site)
-  * [Related Repositories](#Related Repositories)
-  * [To Run the Web App Locally](#To Run the Web App Locally)
-  * [Meet The Team](#Meet The Team)
+  * [About Our Site](#About-Our-Site)
+  * [Related Repositories](#Related-Repositories)
+  * [To Run the Web App Locally](#To-Run-the-Web-App-Locally)
+  * [Meet The Team](#Meet-The-Team)
 <!--te-->
 
 Project Overview
@@ -32,11 +32,11 @@ We created this project to work with the intersection between technology and eng
 
 Check Out Our Website!
 ======================
-Our code is also hosted at [this link](http://allisonchen.co/fLOW_frontend)
+Our code is hosted at [this link](http://allisonchen.co/fLOW_frontend). For descriptions of each page, see the section below
 
 About Our Site
 ==============
-As many student projects, there is still a lot that can be done to improve our project, but below I'll highlight main points of each page.
+As many student projects, there is still a lot that can be done to improve our project, but below I'll highlight main points of each page. Navigate to each page by clicking the appropriate icon in the left hand side navigation bar.
 
 ### The Home Page
 This page is mainly for our UI, designed and implemented by our wonderful Design Team, spearheaded by Nick Hom! Without having much experience in React and Web Development before, our amazing design team was able to create the beauty you see before you! From the first stages of our project, the data on the graph you see here was from when we used Firebase for our database. As we switched to Postgres to utilize SQL and relational databases, the data on this graph became outdated. 
