@@ -1,6 +1,11 @@
 # fLOW
 Code for fLOW, a personal water usage tracker. fLOW is a project through Creative Labs at UCLA led by Allison Chen and Carla Cornillon from January 2020 to September 2020.
 
+
+## Table of Contents
+[Project Overview] (#overview)
+
+<a name="overview"/>
 ## Project Overview
 fLOW consists of three components: the hardware, the server & database, and the frontend. Users can attach the device to their sinks and view their water usage through their computers or phones
 
@@ -64,7 +69,7 @@ For now, we're putting a pause on this project, but for the future, here are som
 The code is rough, but please remember this was most of our first time working with backend/frontend, React, Databases, and Javascript! From this project, we were all learning as we went, meaning a lot of the implementations can be improved, but that's what projects like these are for right? :)
 
 ### Other Repositories
-* [Backend](github.com/allisonchen23/fLOW_backend)
+* [Backend](https://github.com/allisonchen23/fLOW_backend)
 * [Arduino & Hardware Code](https://github.com/juanbanchs/fLOW_Hardware)
 
 ## Meet the Team
