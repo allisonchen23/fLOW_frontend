@@ -18,8 +18,7 @@ We would like to work with the intersection between technology and engineering a
 
 ## To Run the Web App
 ### Install Node.js
-Use [this link](https://nodejs.org/en/download/) to download Node.js. Our software uses version 12.14.1. 
-To check if you have the latest version, in your Terminal/Command Prompt run `node -v`.
+Use [this link](https://nodejs.org/en/download/) to download Node.js. Our software uses version 12.14.1. To check if you have the latest version, in your Terminal/Command Prompt run `node -v`.
 
 ### Clone This Repository
 1. In your terminal/command prompt, `cd` to the directory you want the repository to be in.
@@ -52,18 +51,21 @@ When you load the page, there's no data shown, but when you select devices from 
 ### Future Goals
 For now, we're putting a pause on this project, but for the future, here are some features we'd like to see:
 
-* Individual lines on the graph for each device we choose as well as total water usage
+* Individual lines on the graph for each device we choose as well as total group water usage
 * Fixing bugs such as hitting refresh takes you back to the home page or selecting devices makes the graph "reload"
 * Fixing styling bugs
 * Improved security and scalability :))
 * Show usage from this week compared to last week
 * Change the time frame of the graph
 * Mobile friendly
+* Leader boards
+* Being able to log into accounts
 
-The code is rough, but please remember this was most of our first time working with backend/frontend, React, Databases, and Javascript! From this project, we were all learning as we went, meaning a lot of things could be improved, but that's what projects like these are for right? :)
+The code is rough, but please remember this was most of our first time working with backend/frontend, React, Databases, and Javascript! From this project, we were all learning as we went, meaning a lot of the implementations can be improved, but that's what projects like these are for right? :)
 
 ### Other Repositories
-* [Backend]
+* [Backend] (github.com/allisonchen23/fLOW_backend)
+* [Arduino & Hardware Code]
 
 ## Meet the Team
 ### Design Team
