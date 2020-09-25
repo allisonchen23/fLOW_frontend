@@ -5,10 +5,16 @@ Code for fLOW, a personal water usage tracker. fLOW is a project through Creativ
 ## Table of Contents
 <!--ts-->
   * [Project Overview](#Project Overview)
+  * [Motivation](#Motivation)
+  * [Check Out Our Website!](#Check Out Our Website!)
+  * [About Our Site](#About Our Site)
+  * [Related Repositories](#Related Repositories)
+  * [To Run the Web App Locally](#To Run the Web App Locally)
+  * [Meet The Team](#Meet The Team)
 <!--te-->
 
-## Project Overview
-===================
+Project Overview
+================
 fLOW consists of three components: the hardware, the server & database, and the frontend. Users can attach the device to their sinks and view their water usage through their computers or phones
 
 #### Hardware
@@ -20,26 +26,16 @@ Our server is a Node.js server that runs on an Oracle Cloud Infrastructure VM. I
 #### Frontend
 That's this repository! We want to communicate to users in a clear and concise manner how much water they're using We mainly convey this through graphs and different metrics
 
-## Motivation
-We would like to work with the intersection between technology and engineering and sustainability. Each and every one of us wastes water while we're washing our hands, brushing our teeth, etc. The goal of this project is to develop a device to measure water usage and display a user's trends over time. By bringing attention and awareness to the problem, individuals can actively make lifestyle changes to play their part in conserving water.
+Motivation
+==========
+We created this project to work with the intersection between technology and engineering and sustainability. Each and every one of us wastes water while we're washing our hands, brushing our teeth, etc. The goal of this project is to develop a device to measure water usage and display a user's trends over time. By bringing attention and awareness to the problem, individuals can actively make lifestyle changes to play their part in conserving water.
 
-## To Run the Web App
-### Install Node.js
-Use [this link](https://nodejs.org/en/download/) to download Node.js. Our software uses version 12.14.1. To check if you have the latest version, in your Terminal/Command Prompt run `node -v`.
-
-### Clone This Repository
-1. In your terminal/command prompt, `cd` to the directory you want the repository to be in.
-2. Run this command: `git clone https://github.com/allisonchen23/fLOW_frontend.git`
-
-### Run the Web App
-1. From terminal, `cd` into the downloaded repository
-2. Run `npm install`
-3. Run `npm start`
-
-## Check Out Our Website!
+Check Out Our Website!
+======================
 Our code is also hosted at [this link](http://allisonchen.co/fLOW_frontend)
 
-## About Our Site
+About Our Site
+==============
 As many student projects, there is still a lot that can be done to improve our project, but below I'll highlight main points of each page.
 
 ### The Home Page
@@ -70,11 +66,27 @@ For now, we're putting a pause on this project, but for the future, here are som
 
 The code is rough, but please remember this was most of our first time working with backend/frontend, React, Databases, and Javascript! From this project, we were all learning as we went, meaning a lot of the implementations can be improved, but that's what projects like these are for right? :)
 
-### Other Repositories
+Related Repositories
+====================
 * [Backend](https://github.com/allisonchen23/fLOW_backend)
 * [Arduino & Hardware Code](https://github.com/juanbanchs/fLOW_Hardware)
 
-## Meet the Team
+To Run the Web App Locally
+==================
+### Install Node.js
+Use [this link](https://nodejs.org/en/download/) to download Node.js. Our software uses version 12.14.1. To check if you have the latest version, in your Terminal/Command Prompt run `node -v`.
+
+### Clone This Repository
+1. In your terminal/command prompt, `cd` to the directory you want the repository to be in.
+2. Run this command: `git clone https://github.com/allisonchen23/fLOW_frontend.git`
+
+### Run the Web App
+1. From terminal, `cd` into the downloaded repository
+2. Run `npm install`
+3. Run `npm start`
+
+Meet The Team
+=============
 ### Design Team
 **Nick Hom** | Second Year Economics Major<br/>
 <img src="src/assets/bio_imgs/nick.jpg" width="250">
@@ -89,7 +101,7 @@ The code is rough, but please remember this was most of our first time working w
 **Carla Cornillon** | Second Year Mechanical Engineering Major<br/>
 <img src="src/assets/bio_imgs/carla.png" width="250">
 
-**Nhung Nguyen** | Third Year <br/>
+**Nhung Nguyen** | Third Year Environmental Science Major<br/>
 <img src="src/assets/bio_imgs/nhung.jpg" width="250">
 
 **Rosa Son** | Second Year Mechanical Engineering Major<br/>
