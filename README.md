@@ -64,7 +64,7 @@ For now, we're putting a pause on this project, but for the future, here are som
 The code is rough, but please remember this was most of our first time working with backend/frontend, React, Databases, and Javascript! From this project, we were all learning as we went, meaning a lot of the implementations can be improved, but that's what projects like these are for right? :)
 
 ### Other Repositories
-* [Backend] (github.com/allisonchen23/fLOW_backend)
+* [Backend](github.com/allisonchen23/fLOW_backend)
 * [Arduino & Hardware Code]
 
 ## Meet the Team
