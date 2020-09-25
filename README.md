@@ -1,5 +1,5 @@
 # fLOW
-Code for fLOW, a personal water usage tracker. fLOW is a project through Creative Labs at UCLA led by Allison Chen and Carla Cornillon.
+Code for fLOW, a personal water usage tracker. fLOW is a project through Creative Labs at UCLA led by Allison Chen and Carla Cornillon from January 2020 to September 2020.
 
 ## Project Overview
 fLOW consists of three components: the hardware, the server & database, and the frontend. Users can attach the device to their sinks and view their water usage through their computers or phones
