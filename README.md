@@ -4,9 +4,9 @@ Code for fLOW, a personal water usage tracker. fLOW is a project through Creativ
 
 ## Table of Contents
 <!--ts-->
-  * [Project Overview](#Project Overview)
+  * [Project Overview](#Project-Overview)
   * [Motivation](#Motivation)
-  * [Check Out Our Website!](#Check Out Our Website!)
+  * [Check Out Our Website!](#Check-Out-Our-Website!)
   * [About Our Site](#About Our Site)
   * [Related Repositories](#Related Repositories)
   * [To Run the Web App Locally](#To Run the Web App Locally)
