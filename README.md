@@ -4,13 +4,11 @@ Code for fLOW, a personal water usage tracker. fLOW is a project through Creativ
 
 ## Table of Contents
 <!--ts-->
-  * [Project Overview](#overview)
+  * [Project Overview](#Project Overview)
 <!--te-->
 
-overview
-========
-
 ## Project Overview
+===================
 fLOW consists of three components: the hardware, the server & database, and the frontend. Users can attach the device to their sinks and view their water usage through their computers or phones
 
 #### Hardware
