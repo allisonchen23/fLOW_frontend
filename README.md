@@ -65,7 +65,7 @@ The code is rough, but please remember this was most of our first time working w
 
 ### Other Repositories
 * [Backend](github.com/allisonchen23/fLOW_backend)
-* [Arduino & Hardware Code]
+* [Arduino & Hardware Code](https://github.com/juanbanchs/fLOW_Hardware)
 
 ## Meet the Team
 ### Design Team
