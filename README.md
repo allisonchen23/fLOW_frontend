@@ -6,6 +6,7 @@ Code for fLOW, a personal water usage tracker. fLOW is a project through Creativ
 <!--ts-->
   * [Project Overview](#Project-Overview)
   * [Motivation](#Motivation)
+  * [Video Demo] (#Video-Demo)
   * [Check Out Our Website!](#Check-Out-Our-Website!)
   * [About Our Site](#About-Our-Site)
   * [Related Repositories](#Related-Repositories)
@@ -29,6 +30,10 @@ That's this repository! We want to communicate to users in a clear and concise m
 Motivation
 ==========
 We created this project to work with the intersection between technology and engineering and sustainability. Each and every one of us wastes water while we're washing our hands, brushing our teeth, etc. The goal of this project is to develop a device to measure water usage and display a user's trends over time. By bringing attention and awareness to the problem, individuals can actively make lifestyle changes to play their part in conserving water.
+
+Video Demo
+==========
+[Here](https://www.youtube.com/watch?v=go6YNm4GTyo&feature=youtu.be) is a video demo shot by Allison Chen and Juan Banchs and edited by THE one and only Juan Banchs.
 
 Check Out Our Website!
 ======================
