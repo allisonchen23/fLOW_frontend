@@ -37,7 +37,7 @@ Video Demo
 
 Check Out Our Website!
 ======================
-Our code is hosted at [this link](http://allisonchen.co/fLOW_frontend). For descriptions of each page, see the section below
+Our code is hosted at [this link](http://allisonchen.us/fLOW_frontend). For descriptions of each page, see the section below
 
 About Our Site
 ==============
